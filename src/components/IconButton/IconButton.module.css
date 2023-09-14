@@ -1,0 +1,14 @@
+.button {
+    display: inline-block;
+}
+
+.button > button {
+    /* 移除 button 預設樣式 */
+    border: none;
+    background: none;
+    appearance: none;
+}
+
+.button > button:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+.nav {
+    /* border: 1px solid red; */
+    background-color: var(--white);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 75px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+
+    /* 子元件定位 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navBlock {
+    margin: 25px 0 20px;
+}
+
+.navBlock:hover {
+    cursor: pointer;
+}
+
+.navBlock > p {
+    font-size: 12px;
+    color: var(--dark-quartz-grey);
+    text-align: center;
+    margin: 0;
+}
+
+.logoIcon {
+    /* border: 1px solid red; */
+    width: 60%;
+}
+
+.recentIcon {
+    width: 40%;
+}
+
+.bookmarkIcon {
+    width: 30%;
+}

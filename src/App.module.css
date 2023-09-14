@@ -1,0 +1,19 @@
+.container {
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: row;
+}
+
+.aside {
+    position: relative;
+    z-index: 1000;
+}
+
+.main {
+    z-index: 2;
+}
+
+p {
+    font-size: 15px;
+    color: var(--dark-quartz-grey);
+}

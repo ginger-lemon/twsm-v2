@@ -1,0 +1,57 @@
+.container {
+    /* border: 1px solid red; */
+    border-radius: 25px;
+    width: 375px;
+    background-color: var(--seasalt);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    /* 定位 */
+    position: absolute;
+    top: 20px;
+    left: 87.5px;
+    z-index: 1500;
+}
+
+.containerFocus {
+    border-radius: 10px;
+}
+
+.form {
+    padding: 10px 30px;
+    position: relative;
+}
+
+.input {
+    border: none;
+    background-color: var(--seasalt);
+    width: 200px;
+    margin-right: 10px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.button {
+    display: inline-block;
+}
+
+.button > button {
+    /* 移除 button 預設樣式 */
+    border: none;
+    background: none;
+    appearance: none;
+}
+
+.searchIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 13px;
+    right: 30px;
+    cursor: pointer;
+}
+
+
