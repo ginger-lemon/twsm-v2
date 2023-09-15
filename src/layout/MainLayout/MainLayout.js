@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from './MainLayout.module.css'
-import Nav from "../components/nav/Nav";
-import Map from "../components/map/Map";
+import Nav from "../../components/nav/Nav";
+import Map from "../../components/map/Map";
 
 function MainLayout({ children }) {
     return (

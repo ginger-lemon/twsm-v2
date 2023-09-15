@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from './SearchSuggest.module.css'
 
-function SuggestCard() {
+function SearchSuggest() {
     return (
         <div className={Styles.container}>
             <h3>為您推薦</h3>
@@ -10,4 +10,4 @@ function SuggestCard() {
     );
 }
 
-export default SuggestCard;
+export default SearchSuggest;
