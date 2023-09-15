@@ -1,0 +1,11 @@
+.input {
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    z-index: 1500;
+}
+
+.input > div:nth-child(1) {
+    margin: auto;
+    /* border: 1px soild red; */
+}

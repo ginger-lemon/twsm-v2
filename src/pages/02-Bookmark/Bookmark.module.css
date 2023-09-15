@@ -1,14 +1,3 @@
-.input {
-    width: 100%;
-    margin: 20px 0; 
-    position: absolute;
-}
-
-.input > div:nth-child(1) {
-    margin: auto;
-    /* border: 1px soild red; */
-}
-
 .section {
     border-top: 1px solid var(--light-gray);
     position: absolute;

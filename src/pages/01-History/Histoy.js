@@ -1,18 +1,12 @@
 import React from "react";
 import Styles from './History.module.css'
-import MainLayout from "../../layout/MainLayout";
-import Panel from '../../components/Panel/Panel'
 import InfoCard from '../../components/InfoCard/InfoCard'
-import SearchInput from "../../components/SearchInput/SearchInput";
+import SubLayout from "../../layout/SubLayout/SubLayout";
 
 function History() {
     return (
-        <MainLayout>
-            <Panel>
-                <div className={Styles.input}>
-                    <SearchInput />
-                </div>
-                <div className={Styles.section}>
+        <SubLayout>
+            <div className={Styles.section}>
                     <InfoCard>
                         顯示搜尋紀錄
                     </InfoCard>
@@ -20,9 +14,9 @@ function History() {
                         顯示搜尋紀錄2
                     </InfoCard>
                 </div>
-            </Panel>
-        </MainLayout>
+        </SubLayout>
     );
 }
 
 export default History;
+
