@@ -3,15 +3,19 @@ import './styles/global.css'
 import Home from "./pages/00-Home/Home";
 import History from "./pages/01-History/Histoy";
 import Bookmark from "./pages/02-Bookmark/Bookmark";
-import ResultOverview from "./pages/10-ResultOverview/ResultOverview";
+import Overview from "./pages/10-Overview/Overview";
+import Features from "./pages/11-Features/Features";
+import Utilization from "./pages/12-Utilization/Utilization";
 
 function App() {
     return (
         <>
             {/* <Home /> */}
             {/* <History /> */}
-            {/* <Bookmark /> */}
-            <ResultOverview />
+            <Bookmark />
+            {/* <Overview /> */}
+            {/* <Features /> */}
+            {/* <Utilization /> */}
         </>
     );
 }

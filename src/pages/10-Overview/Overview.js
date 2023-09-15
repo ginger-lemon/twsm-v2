@@ -1,17 +1,17 @@
 import React from "react";
-import Styles from './ResultOverview.module.css'
+import Styles from './Overview.module.css'
 import MainLayout from "../../layout/MainLayout";
 import SearchInput from "../../components/SearchInput/SearchInput";
-import InfoSection from '../../components/InfoSection/InfoSection'
+import Panel from '../../components/Panel/Panel'
 import InfoCard from "../../components/InfoCard/InfoCard";
 import Tag from './Tag'
 import CategroiesBar from "../../components/CategroyBar/CategroyBar";
 
 
-function ResultOverview() {
+function Overview() {
     return (
         <MainLayout>
-            <InfoSection>
+            <Panel>
                 <div className={Styles.container}>
                     {/* input 最上層 */}
                     <div className={Styles.input}>
@@ -48,9 +48,9 @@ function ResultOverview() {
                         </div>
                     </InfoCard>
                 </div>
-            </InfoSection>
+            </Panel>
         </MainLayout>
     );
 }
 
-export default ResultOverview;
+export default Overview;

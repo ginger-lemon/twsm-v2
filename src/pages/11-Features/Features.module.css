@@ -1,7 +1,8 @@
 .input {
     width: 100%;
+    margin: 20px 0; 
     position: absolute;
-    top: 20px;
+    z-index: 2000;
 }
 
 .input > div:nth-child(1) {
@@ -10,13 +11,15 @@
 }
 
 .section {
-    border-top: 1px solid var(--light-gray);
     position: absolute;
     top: 100px;
     width: 100%;
 }
 
 .section > div {
-    /* border: 1px solid red; */
     padding-left: 20px;
+}
+
+.section > div:first-child {
+    padding: 0;
 }

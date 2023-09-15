@@ -1,14 +1,14 @@
 import React from "react";
 import Styles from './Bookmark.module.css'
 import MainLayout from "../../layout/MainLayout";
-import InfoSection from '../../components/InfoSection/InfoSection'
+import Panel from '../../components/Panel/Panel'
 import InfoCard from "../../components/InfoCard/InfoCard";
 import SearchInput from "../../components/SearchInput/SearchInput";
 
 function Bookmark() {
     return (
         <MainLayout>
-            <InfoSection>
+            <Panel>
                 <div className={Styles.input}>
                     <SearchInput />
                 </div>
@@ -20,7 +20,7 @@ function Bookmark() {
                         顯示我的最愛2
                     </InfoCard>
                 </div>
-            </InfoSection>
+            </Panel>
         </MainLayout>
     );
 }

@@ -1,11 +1,13 @@
 import React from "react";
-import Styles from './History.module.css'
+import Styles from './Utilization.module.css'
 import MainLayout from "../../layout/MainLayout";
+import CategroiesBar from "../../components/CategroyBar/CategroyBar";
 import Panel from '../../components/Panel/Panel'
-import InfoCard from '../../components/InfoCard/InfoCard'
 import SearchInput from "../../components/SearchInput/SearchInput";
+import InfoCard from "../../components/InfoCard/InfoCard";
 
-function History() {
+
+function Utilization() {
     return (
         <MainLayout>
             <Panel>
@@ -13,16 +15,15 @@ function History() {
                     <SearchInput />
                 </div>
                 <div className={Styles.section}>
+                    <CategroiesBar />
                     <InfoCard>
-                        顯示搜尋紀錄
-                    </InfoCard>
-                    <InfoCard>
-                        顯示搜尋紀錄2
+                        <h3>標題</h3>
+                        <p>介紹</p>
                     </InfoCard>
                 </div>
             </Panel>
         </MainLayout>
     );
-}
+} 
 
-export default History;
+export default Utilization;
