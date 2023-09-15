@@ -8,7 +8,7 @@ function SearchSection() {
         <section className={Styles.section}>
             <SearchInput />
             {/* 已經搜尋的時候隱藏為你推薦 */}
-            {/* <SuggestCard /> */}
+            <SuggestCard />
         </section>
     );
 }

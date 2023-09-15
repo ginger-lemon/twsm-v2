@@ -1,5 +1,5 @@
-/* .container {
-    border: 1px solid green;
+.container {
+    /* border: 1px solid green; */
     display: flex;
     flex-direction: row;
 }
@@ -18,4 +18,4 @@ p {
     font-weight: var(--font-weight-normal);
     font-size: var(--font-size-p);
     color: var(--dark-quartz-grey);
-} */
+}

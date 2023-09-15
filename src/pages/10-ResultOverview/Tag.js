@@ -1,7 +1,7 @@
 import React from "react";
-import Styles from './SpicesTag.module.css'
+import Styles from './Tag.module.css'
 
-function SpicesTag() {
+function Tag() {
     return (
         <div className={Styles.tag}>
             原生
@@ -9,4 +9,4 @@ function SpicesTag() {
     );
 }
 
-export default SpicesTag;
+export default Tag;

@@ -3,32 +3,44 @@
     height: 100%;
     background-color: var(--white);
     box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
-    
+
+    position: relative;
+}
+
+/*  */
+.input {
+    width: 100%;
     position: absolute;
-    top: 0;
-    left: 75px;
+    top: 20px;
+    z-index: 2000;
+}
+
+.input > div:nth-child(1) {
+    margin: auto;
+    border: 1px soild red;
+    
 }
 
 /* 最上方的圖片欄位 */
-.imgContainer {
+.img {
     width: 100%;
     height: 240px;
     overflow: hidden;
     position: relative;
 }
 
-.img {
+.img > img {
     display: block; 
     max-width: 100%;
     object-fit: cover;
     object-position: 50% 50%;
 }
 
-.imgContainer > button {
+.img > button {
     display: none;
 }
 
-.imgContainer:hover > button {
+.img:hover > button {
     display: block;
     position: absolute;
     left: 10px;

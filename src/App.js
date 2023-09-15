@@ -1,25 +1,18 @@
 import React from "react";
 import './styles/global.css'
-import Styles from './App.module.css'
-import Nav from './components/nav/Nav'
-import SearchInput from './components/SearchInput/SearchInput'
-import Map from "./components/map/Map";
-import Info from "./components/info/info";
-import SuggestCard from "./components/SearchSuggest/SearchSuggest";
-import SearchSection from "./components/SearchSection/SearchSection";
+import Home from "./pages/00-Home/Home";
+import History from "./pages/01-History/Histoy";
+import Bookmark from "./pages/02-Bookmark/Bookmark";
+import ResultOverview from "./pages/10-ResultOverview/ResultOverview";
 
 function App() {
     return (
-        <div className={Styles.container}>
-            <aside className={Styles.aside}>
-                <Nav />
-                <SearchSection />
-                <Info />
-            </aside>
-            <main className={Styles.main}>
-                <Map />
-            </main>
-        </div>
+        <>
+            {/* <Home /> */}
+            {/* <History /> */}
+            {/* <Bookmark /> */}
+            <ResultOverview />
+        </>
     );
 }
 
