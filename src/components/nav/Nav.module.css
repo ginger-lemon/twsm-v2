@@ -1,5 +1,4 @@
 .nav {
-    /* border: 1px solid red; */
     background-color: var(--white);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     width: 75px;
@@ -14,14 +13,45 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
+    @media (max-width: 768px) {
+        width: 100vw;
+        height: 75px;
+        box-shadow: none;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+    }
 }
 
 .navBlock {
+    /* border: 1px solid red; */
     margin: 25px 0 20px;
+    padding: 0;
+    width: 40px;
+
+    @media (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
 }
 
 .navBlock:hover {
     cursor: pointer;
+    width: 40px;
+    border-radius: 5px;
+    background-color: var(--light-gray);
+
+    @media (max-width: 786px) {
+        width: 50px;
+    }
 }
 
 .navBlock > p {
@@ -29,17 +59,60 @@
     color: var(--dark-quartz-grey);
     text-align: center;
     margin: 0;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 
 .logoIcon {
     /* border: 1px solid red; */
-    width: 60%;
+    display: block;
+    width: 160%;
+    object-fit: contain;
+    object-position: center center;
+    transform: translateX(-15%);
+
+    @media (max-width: 768px) {
+        /* flex: 2; */
+        width: 140%;
+        display: block;
+        object-fit: fill;
+        object-position: center center;
+        transform: translate(-15%, 10%);
+    }
 }
 
 .recentIcon {
-    width: 40%;
+    width: 120%;
+    display: block;
+    object-fit: fill;
+    object-position: center center;
+    transform: translate(-5%);
+
+    @media (max-width: 768px) {
+        /* flex: 1; */
+        width: 120%;
+        display: block;
+        object-fit: cover;
+        object-position: center center;
+        transform: translate(-10%, 5%);
+    }
 }
 
 .bookmarkIcon {
-    width: 30%;
+    width: 90%;
+    display: block;
+    object-fit: contain;
+    object-position: center center;
+    transform: translate(5%);
+
+    @media (max-width: 768px) {
+        /* flex: 1; */
+        display: block;
+        width: 80%;
+        object-fit: contain;
+        object-position: center center;
+        transform: translate(10%, 5%);
+    }
 }

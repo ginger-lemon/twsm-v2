@@ -10,10 +10,10 @@ import Utilization from "./pages/12-Utilization/Utilization";
 function App() {
     return (
         <>
-            <Home />
+            {/* <Home /> */}
             {/* <History /> */}
             {/* <Bookmark /> */}
-            {/* <Overview /> */}
+            <Overview />
             {/* <Features /> */}
             {/* <Utilization /> */}
         </>

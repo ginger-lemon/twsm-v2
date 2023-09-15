@@ -6,6 +6,12 @@
     position: absolute;
     left: 75px;
     z-index: 1500;
+
+    @media (max-width: 768px) {
+        width: 100vw;
+        left: 0;
+
+    }
 }
 
 .section > div {
