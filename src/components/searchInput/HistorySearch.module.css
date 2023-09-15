@@ -1,17 +1,17 @@
-.history {
-    /* border: 1px solid green; */
+/* .history {
+    border: 1px solid green;
     padding: 15px 0px;
     font-size: 15px;
     color: var(--night);
-}
+} */
 
-.history > div {
+.history {
     /* border: 1px solid brown; */
     padding: 10px 30px;
     position: relative;
 }
 
-.history > div:hover {
+.history:hover {
     cursor: pointer;
     background-color: var(--light-gray);
 }

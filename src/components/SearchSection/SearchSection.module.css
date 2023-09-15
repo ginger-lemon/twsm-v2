@@ -1,0 +1,24 @@
+.section {
+    width: 400px;
+    /* border: 1px solid red; */
+
+    /* 定位 */
+    position: absolute;
+    left: 75px;
+    z-index: 1500;
+}
+
+.section > div {
+    /* border: 1px solid red; */
+    margin: auto;
+}
+
+.section > :nth-child(1) {
+    /* border: 1px solid red; */
+    margin-top: 20px;
+}
+
+.section > :nth-child(2) {
+    /* border: 1px solid red; */
+    margin-top: 20px;
+}

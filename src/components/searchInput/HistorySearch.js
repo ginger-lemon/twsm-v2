@@ -7,7 +7,6 @@ import IconButton from "../IconButton/IconButton";
 function HistorySearch() {
     return (
         <div className={Styles.history}>
-            <div>
                 <img
                     className={Styles.plantIcon} 
                     src={PlantIcon}
@@ -21,7 +20,6 @@ function HistorySearch() {
                         alt="Remove history"
                     />
                 </IconButton>
-            </div>
         </div>
     );
 }

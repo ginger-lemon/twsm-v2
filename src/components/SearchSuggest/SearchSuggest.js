@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from './SuggestCard.module.css'
+import Styles from './SearchSuggest.module.css'
 
 function SuggestCard() {
     return (
