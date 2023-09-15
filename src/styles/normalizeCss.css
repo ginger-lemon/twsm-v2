@@ -347,3 +347,10 @@
   [hidden] {
     display: none;
   }
+
+  /* 額外加入的 */
+
+  ul, li, h1, h2, h3, p {
+    padding: 0;
+    margin: 0;
+  } 

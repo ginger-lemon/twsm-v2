@@ -1,0 +1,34 @@
+.categroy {
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.categroyName {
+    padding: 15px;
+}
+
+.categroyName:hover {
+    background-color: var(--light-gray);
+    color: var(--dark-moss-green);
+    cursor: pointer;
+}
+
+.categroyName > p {
+    font-weight: var(--font-weight-bold);
+}
+
+/* active */
+.activeCategroyName {
+    color: var(--pumpkin);
+}
+
+.activeCategroyName::after {
+    content: '';
+    display: block;
+    width: 80%;
+    border: 3px solid var(--pumpkin);
+    border-radius: 5px;
+    transform: translateY(15px);
+}
