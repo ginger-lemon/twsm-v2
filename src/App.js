@@ -15,10 +15,10 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/history" element={<History />} />
                 <Route path="/bookmark" element={<Bookmark />} />
-                <Route path="/overview/:spicesName" element={<Overview />} />
+                <Route path="/overview" element={<Overview />} />
                 {/* 確認是否需要將 features 與 utilization 放到 overview 底下 */}
-                <Route path="/features/:spicesName" element={<Features />} />
-                <Route path="/utilization/:spicesName" element={<Utilization />} />
+                <Route path="/features" element={<Features />} />
+                <Route path="/utilization" element={<Utilization />} />
                 {/* 木 */}
                 <Route path="*" element={<h1>連線失敗，請回到首頁重新執行動作。</h1>}/>
             </Routes>

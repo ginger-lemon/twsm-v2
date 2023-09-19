@@ -116,3 +116,8 @@
         transform: translate(10%, 5%);
     }
 }
+
+/* 刪除 Link 預設樣式 */
+a {
+    text-decoration: none;
+}

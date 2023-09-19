@@ -12,7 +12,9 @@ function Utilization() {
     return (
         <SubLayout>
             <div className={Styles.section}>
-                <CategroiesBar />
+                <CategroiesBar 
+                    activeP='utilization'
+                />
                 <InfoCard>
                     <h3>標題</h3>
                     <p>介紹</p>

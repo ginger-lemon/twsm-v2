@@ -29,7 +29,9 @@ function Overview() {
                 </div>
             </InfoCard>
             {/* 總覽/評論/簡介區塊 */}
-            <CategroiesBar />
+            <CategroiesBar 
+                activeP='overview'
+            />
             {/* 其他人也搜尋以下項目 */}
             <InfoCard >
                 <div className={Styles.overview}>

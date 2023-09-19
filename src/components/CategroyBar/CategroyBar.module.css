@@ -6,7 +6,7 @@
 }
 
 .categroyName {
-    padding: 15px;
+    padding: 20px;
 }
 
 .categroyName:hover {
@@ -20,15 +20,15 @@
 }
 
 /* active */
-.activeCategroyName {
+.activeP {
     color: var(--pumpkin);
 }
 
-.activeCategroyName::after {
+.activeP::after {
     content: '';
     display: block;
     width: 80%;
     border: 3px solid var(--pumpkin);
     border-radius: 5px;
-    transform: translateY(15px);
+    transform: translateY(20px);
 }

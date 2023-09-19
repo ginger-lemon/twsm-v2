@@ -8,7 +8,9 @@ function Features() {
     return (
         <SubLayout>
             <div className={Styles.section}>
-                <CategroiesBar />
+                <CategroiesBar 
+                    activeP='features'
+                />
                 <InfoCard>
                     <h3>標題</h3>
                     <p>介紹</p>
