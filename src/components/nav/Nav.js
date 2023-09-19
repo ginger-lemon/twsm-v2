@@ -5,10 +5,10 @@ import logoIcon from '../../images/logo.svg'
 import RecentIcon from '../../images/icon-recent.svg'
 import BookmarkIcon from '../../images/icon-bookmark.svg'
 import { Link } from "react-router-dom";
-import Home from "../../pages/00-Home/Home";
-import History from "../../pages/01-History/Histoy";
-import Bookmark from "../../pages/02-Bookmark/Bookmark";
-import Overview from "../../pages/10-Overview/Overview";
+import Home from "../../pages/Home/Home";
+import History from "../../pages/History/Histoy";
+import Bookmark from "../../pages/Bookmark/Bookmark";
+import Overview from "../../pages/Overview/Overview";
 
 function Nav() {
     return (

@@ -2,9 +2,9 @@ import React from "react";
 import Styles from './CategroyBar.module.css'
 import InfoCard from "../InfoCard/InfoCard";
 import { Link } from "react-router-dom";
-import Overview from "../../pages/10-Overview/Overview";
-import Features from "../../pages/11-Features/Features";
-import Utilization from "../../pages/12-Utilization/Utilization";
+import Overview from "../../pages/Overview/Overview";
+import Features from "../../pages/Features/Features";
+import Utilization from "../../pages/Utilization/Utilization";
 
 function CategroiesBar({ activeP }) {
     return(
