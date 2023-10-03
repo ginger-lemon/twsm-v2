@@ -7,10 +7,10 @@ import SubLayout from "../../layout/SubLayout/SubLayout";
 import { useDispatch, useSelector } from "react-redux";
 
 const Overview = () => {
-    // const data = useSelector(state => state.fetch.textData)
-    // const result = data && data.filter( data => data.Kingdom === '植物界' )
-    // const usableData = result && result[0]
-    // console.log(usableData)
+    const data = useSelector(state => state.fetch.textData)
+    const result = data && data.filter( data => data.Kingdom === '植物界' )
+    const usableData = result && result[0]
+    console.log(usableData)
 
     return (
         <SubLayout>
@@ -26,16 +26,16 @@ const Overview = () => {
                 <div className={Styles.basicInfo}>
                     <div>
                         <h1 className={Styles.h1}>
-                            中文名稱
+                            {usableData && usableData.ChineseName}
                         </h1>
                         <div className={Styles.tags}>
                             <Tag />
                         </div>
                     </div>
                     <p className={Styles.scientifiName}>
-                        學名
+                        {usableData && usableData.SciName}
                     </p>
-                        <p>科＞屬</p>
+                        <p>{usableData && usableData.Class} ＞ {usableData && usableData.Order} ＞ {usableData && usableData.Family}</p>
                 </div>
             </InfoCard>
             {/* 總覽/評論/簡介區塊 */}
@@ -45,8 +45,7 @@ const Overview = () => {
             {/* 其他人也搜尋以下項目 */}
             <InfoCard >
                 <div className={Styles.overview}>
-                    <h3>標題</h3>
-                    <p>其他內容</p>
+                    <p>{usableData && usableData.Behavior}</p>
                 </div>
             </InfoCard>
         </SubLayout>

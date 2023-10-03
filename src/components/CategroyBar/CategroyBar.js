@@ -16,7 +16,7 @@ function CategroiesBar({ activeP }) {
                         <p 
                             className={activeP === 'overview' ? Styles.activeP : ''}
                         >
-                            概述
+                            習性
                         </p>
                     </div>
                 </Link>
@@ -36,7 +36,7 @@ function CategroiesBar({ activeP }) {
                         <p
                             className={activeP === 'utilization' ? Styles.activeP : ''}
                         >
-                            應用
+                            分佈
                         </p>
                     </div>
                 </Link>

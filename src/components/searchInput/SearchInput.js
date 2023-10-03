@@ -24,7 +24,7 @@ function SearchInput() {
         e.preventDefault()
         try {
             dispatch(fetchTextDatas(inputValue))
-            // dispatch(fetchMapDatas(inputValue))
+            dispatch(fetchMapDatas(inputValue))
 
             navigate('/overview')
         } catch (error) {

@@ -3,8 +3,8 @@ import './Map.css'
 import { MapContainer, TileLayer } from "react-leaflet";
 import L from 'leaflet'
 import MapIcon from '../../images/icon-mark.svg'
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMapDatas } from "../../redux/fetch/fetchSlice";
 
 const customIcon = L.icon({
     iconUrl: {MapIcon},
@@ -12,6 +12,9 @@ const customIcon = L.icon({
 });
 
 const Map = () => {
+    const dispatch = useDispatch()
+    const data = useSelector(state => state.fetch.mapData)
+    console.log(data)
 
     return(
         <div>

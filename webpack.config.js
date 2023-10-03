@@ -21,6 +21,9 @@ module.exports = {
         static: './dist',
         https: false,
         historyApiFallback: true,
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+        }
     },
 
     module: {

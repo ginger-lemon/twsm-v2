@@ -1,14 +1,17 @@
 import React from "react";
 import Styles from './Utilization.module.css'
-import MainLayout from "../../layout/MainLayout/MainLayout";
 import CategroiesBar from "../../components/CategroyBar/CategroyBar";
-import Panel from '../../components/Panel/Panel'
-import SearchInput from "../../components/SearchInput/SearchInput";
 import InfoCard from "../../components/InfoCard/InfoCard";
 import SubLayout from "../../layout/SubLayout/SubLayout";
+import { useSelector } from "react-redux";
 
 
 function Utilization() {
+    const data = useSelector(state => state.fetch.textData)
+    const result = data && data.filter( data => data.Kingdom === '植物界' )
+    const usableData = result && result[0]
+    console.log(usableData)
+
     return (
         <SubLayout>
             <div className={Styles.section}>
@@ -17,7 +20,7 @@ function Utilization() {
                 />
                 <InfoCard>
                     <h3>標題</h3>
-                    <p>介紹</p>
+                    <p>{usableData && usableData.Distri}</p>
                 </InfoCard>
             </div>
         </SubLayout>

@@ -4,16 +4,19 @@ import axios from "axios";
 // get map/text data 
 const apiKey = process.env.MY_API_KEY
 
-// https://www.tbn.org.tw/api/v25/taxon?name=麻雀&withChildren=1
-// https://npgis.cpami.gov.tw/api/v1/SpeciesIntro?name=${value}&apiKey=${apiKey}
+// https://npgis.cpami.gov.tw/api/v1/SpeciesIntro?name=${value}&apiKey=${apiKey} 台灣生物多樣性的這支 api 有 CORS 問題
 export const fetchTextDatas = createAsyncThunk(
     'fetch/fetchTextDatas',
     async (value) => {
-        const response = await axios.get(`https://www.tbn.org.tw/api/v25/taxon?name=${value}&withChildren=1`)
-        return response.data
+        const { data } = await axios.get(`https://npgis.cpami.gov.tw/api/v1/SpeciesIntro?name=${value}&apiKey=${apiKey}`)
+        return data
     }
 )
 
+// 1, 3 有 CORS 問題，第二支不同 API 但有參數的問題
+// https://npgis.cpami.gov.tw/npgis/geoserver/npgis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=npgis:speciesrecord&viewparams=speciesName:${value} 新
+// https://map.tbn.org.tw/geoserver/wfs?request=getFeature&typeName=species:occurrence&CQL_FILTER=scientificname='${value}'&outputformat=json 無法讀到學名
+// https://npgis.cpami.gov.tw/openapi/v1/api/InvestigateRecord?apiKey=${apiKey}&speciesName=${value} 舊
 export const fetchMapDatas = createAsyncThunk(
     'fetch/fetchMapDatas',
     async (value) => {
@@ -36,8 +39,8 @@ export const fetchSlice = createSlice({
     name: 'fetch',
     initialState,
     reducers: {
-        parseJson: (state, action) => {
-            state.textData = state.textData.json()
+        setFetchMapValue: (state, action) => {
+            st
         }
     },
     extraReducers: (builder) => {
