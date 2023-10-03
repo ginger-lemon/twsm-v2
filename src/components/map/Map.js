@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Map.css'
-import { MapContainer, TileLayer, useMap } from "react-leaflet";
-import L from 'leaflet'
+import { MapContainer, TileLayer } from "react-leaflet";
+import L, { map } from 'leaflet'
 import MapIcon from '../../images/icon-mark.svg'
+import { useSelector, useDispatch } from "react-redux";
+import { getMapData } from "../../redux/fetch/fetchSlice";
 
 const customIcon = L.icon({
     iconUrl: {MapIcon},
     iconSize: [35, 35]
 });
 
-function Map() {
+const Map = () => {
+    const mapData = useSelector(state => state.fetch.data)
+    const fetchStatus = useSelector(state => state.fetch.loading)
+    
+    useEffect(() => {
+        if (mapData) {
+            console.log(mapData)
+        }
+    }, [fetchStatus])
+
     return(
         <div>
             <MapContainer

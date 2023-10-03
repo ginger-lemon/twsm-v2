@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack')
 
 module.exports = {
     entry: './src/index.js',
@@ -13,6 +14,7 @@ module.exports = {
         new HtmlWebpackPlugin({ 
             template: './src/index.html' 
         }),
+        new Dotenv(), // 建立 .env 檔案隱藏敏感資料 
     ],
 
     devServer: {
