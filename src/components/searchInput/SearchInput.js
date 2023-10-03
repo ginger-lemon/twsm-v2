@@ -5,7 +5,7 @@ import HistorySearch from './HistorySearch'
 import IconButton from '../IconButton/IconButton'
 import { useSelector, useDispatch } from "react-redux";
 import { setInputValue } from '../../redux/search/searchSlice'
-import { getMapData } from "../../redux/fetch/fetchSlice";
+import { fetchMapDatas, fetchTextDatas, getSpicesDatas } from "../../redux/fetch/fetchSlice";
 import { useNavigate } from "react-router-dom";
 
 function SearchInput() {
@@ -18,14 +18,19 @@ function SearchInput() {
     const handleChange = (e) => {
         const value = e.target.value 
         dispatch(setInputValue(value))
-        // console.log(value)
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        // 加入按下 enter 
-        dispatch(getMapData(inputValue))
-        console.log(inputValue, '開始連線')
+        try {
+            dispatch(fetchTextDatas(inputValue))
+            // dispatch(fetchMapDatas(inputValue))
+
+            navigate('/overview')
+        } catch (error) {
+            console.log(error)
+        }
+        
         navigate('/overview')
     }
 

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Styles from './Overview.module.css'
 import InfoCard from "../../components/InfoCard/InfoCard";
 import Tag from './Tag'
 import CategroiesBar from "../../components/CategroyBar/CategroyBar";
 import SubLayout from "../../layout/SubLayout/SubLayout";
+import { useDispatch, useSelector } from "react-redux";
 
+const Overview = () => {
+    // const data = useSelector(state => state.fetch.textData)
+    // const result = data && data.filter( data => data.Kingdom === '植物界' )
+    // const usableData = result && result[0]
+    // console.log(usableData)
 
-function Overview() {
     return (
         <SubLayout>
             <div className={Styles.img}>
@@ -20,12 +25,16 @@ function Overview() {
             <InfoCard>
                 <div className={Styles.basicInfo}>
                     <div>
-                        <h1 className={Styles.h1}>香料名稱</h1>
+                        <h1 className={Styles.h1}>
+                            中文名稱
+                        </h1>
                         <div className={Styles.tags}>
                             <Tag />
                         </div>
                     </div>
-                    <p className={Styles.scientifiName}>Spice Name</p>
+                    <p className={Styles.scientifiName}>
+                        學名
+                    </p>
                         <p>科＞屬</p>
                 </div>
             </InfoCard>

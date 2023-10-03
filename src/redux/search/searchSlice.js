@@ -30,7 +30,5 @@ export const {
     setSelectedKeyword, 
 } = searchSlice.actions;
 
-export const getSearchKeyword = (state) => state.search.inputValue
-
 export default searchSlice.reducer;
 
