@@ -1,0 +1,168 @@
+{
+    "total_results": 22,
+    "page": 1,
+    "per_page": 20,
+    "results": [
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-07",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.305",
+        "lat": "22.694"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-07",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.313",
+        "lat": "22.692"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-10",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.599",
+        "lat": "22.936"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-10",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.605",
+        "lat": "22.933"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-19",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.290",
+        "lat": "22.678"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-20",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.317",
+        "lat": "22.704"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-25",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.289",
+        "lat": "22.677"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-25",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.290",
+        "lat": "22.677"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-26",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.305",
+        "lat": "22.693"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-26",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.313",
+        "lat": "22.691"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-27",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.317",
+        "lat": "22.704"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-31",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.308",
+        "lat": "22.699"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-31",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.309",
+        "lat": "22.698"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-31",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.316",
+        "lat": "22.697"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-07-31",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.317",
+        "lat": "22.696"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-08-01",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.304",
+        "lat": "22.694"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-08-01",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.307",
+        "lat": "22.697"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-08-01",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.315",
+        "lat": "22.695"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-08-08",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.260",
+        "lat": "22.660"
+      },
+      {
+        "chName": "呂宋月桃",
+        "enName": null,
+        "surveydate": "2012-08-13",
+        "scientificName": "Alpinia flabellata",
+        "lon": "120.263",
+        "lat": "22.663"
+      }
+    ],
+    "message": "查詢成功"
+}

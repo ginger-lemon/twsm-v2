@@ -1,0 +1,168 @@
+{
+    "total_results": 277,
+    "page": 1,
+    "per_page": 20,
+    "results": [
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "1993-07-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.581",
+        "lat": "25.164"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "1993-11-12",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.635",
+        "lat": "24.181"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "1998-03-08",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.844",
+        "lat": "22.098"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2003-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.804",
+        "lat": "23.026"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2003-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.814",
+        "lat": "23.024"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2003-06-22",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.598",
+        "lat": "25.223"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2003-06-22",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.583",
+        "lat": "25.133"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.747",
+        "lat": "22.654"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.748",
+        "lat": "22.654"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.750",
+        "lat": "22.650"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.752",
+        "lat": "22.652"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.800",
+        "lat": "22.712"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.814",
+        "lat": "22.701"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.816",
+        "lat": "22.698"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.821",
+        "lat": "22.717"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2004-01-01",
+        "scientificName": "Alpinia intermedia",
+        "lon": "120.825",
+        "lat": "22.704"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2008-05-13",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.544",
+        "lat": "25.152"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2008-05-13",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.545",
+        "lat": "25.152"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2008-05-13",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.545",
+        "lat": "25.153"
+      },
+      {
+        "chName": "山月桃",
+        "enName": null,
+        "surveydate": "2008-05-13",
+        "scientificName": "Alpinia intermedia",
+        "lon": "121.545",
+        "lat": "25.153"
+      }
+    ],
+    "message": "查詢成功"
+}

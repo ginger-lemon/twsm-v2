@@ -1,0 +1,16 @@
+{
+    "total_results": 1,
+    "page": 1,
+    "per_page": 20,
+    "results": [
+      {
+        "chName": "益母草",
+        "enName": null,
+        "surveydate": "1997-02-20",
+        "scientificName": "Leonurus japonicus",
+        "lon": "120.833",
+        "lat": "22.033"
+      }
+    ],
+    "message": "查詢成功"
+}

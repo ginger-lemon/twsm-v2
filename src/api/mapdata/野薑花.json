@@ -1,0 +1,168 @@
+{
+    "total_results": 31,
+    "page": 1,
+    "per_page": 20,
+    "results": [
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-06-01",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.584",
+        "lat": "25.165"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-07-24",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.540",
+        "lat": "25.168"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-08-20",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.560",
+        "lat": "25.183"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-08-27",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.540",
+        "lat": "25.168"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-08-27",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.549",
+        "lat": "25.147"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-14",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.586",
+        "lat": "25.129"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-14",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.587",
+        "lat": "25.134"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-14",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.588",
+        "lat": "25.127"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-21",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.594",
+        "lat": "25.133"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-24",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.594",
+        "lat": "25.133"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-25",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.590",
+        "lat": "25.189"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-26",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.592",
+        "lat": "25.193"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-26",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.592",
+        "lat": "25.195"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-26",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.593",
+        "lat": "25.196"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2008-10-26",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.593",
+        "lat": "25.194"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2016-11-30",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.547",
+        "lat": "25.157"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2018-06-06",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.586",
+        "lat": "25.174"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2018-06-06",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.588",
+        "lat": "25.189"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2018-06-06",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.591",
+        "lat": "25.189"
+      },
+      {
+        "chName": "穗花山奈",
+        "enName": null,
+        "surveydate": "2018-06-06",
+        "scientificName": "Hedychium coronarium",
+        "lon": "121.595",
+        "lat": "25.197"
+      }
+    ],
+    "message": "查詢成功"
+}

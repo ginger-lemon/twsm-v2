@@ -1,0 +1,104 @@
+{
+    "total_results": 12,
+    "page": 1,
+    "per_page": 20,
+    "results": [
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": null,
+        "scientificName": "Perilla frutescens",
+        "lon": "120.906",
+        "lat": "23.452"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": null,
+        "scientificName": "Perilla frutescens",
+        "lon": "120.908",
+        "lat": "23.460"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": null,
+        "scientificName": "Perilla frutescens",
+        "lon": "120.908",
+        "lat": "23.460"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": null,
+        "scientificName": "Perilla frutescens",
+        "lon": "120.911",
+        "lat": "23.460"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": null,
+        "scientificName": "Perilla frutescens",
+        "lon": "120.916",
+        "lat": "23.448"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": null,
+        "scientificName": "Perilla frutescens",
+        "lon": "120.918",
+        "lat": "23.457"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": "1993-09-23",
+        "scientificName": "Perilla frutescens",
+        "lon": "120.922",
+        "lat": "23.514"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": "2010-01-01",
+        "scientificName": "Perilla frutescens",
+        "lon": "120.900",
+        "lat": "23.462"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": "2010-01-01",
+        "scientificName": "Perilla frutescens",
+        "lon": "120.900",
+        "lat": "23.462"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": "2010-01-01",
+        "scientificName": "Perilla frutescens",
+        "lon": "120.902",
+        "lat": "23.461"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": "2010-01-01",
+        "scientificName": "Perilla frutescens",
+        "lon": "120.911",
+        "lat": "23.460"
+      },
+      {
+        "chName": "紫蘇",
+        "enName": null,
+        "surveydate": "2010-10-23",
+        "scientificName": "Perilla frutescens",
+        "lon": "121.019",
+        "lat": "23.570"
+      }
+    ],
+    "message": "查詢成功"
+}
