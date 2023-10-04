@@ -1,7 +1,7 @@
 [
     {
         "key": "Litsea cubeba",
-        "name": "山胡椒/馬告",
+        "name": "山胡椒",
         "scientificname": "Litsea cubeba"
     }, {
         "key": "Zanthoxylum ailanthoides",
@@ -82,5 +82,5 @@
         "key": "Artemisia indica",
         "name": "艾草",
         "scientificname": "Artemisia indica"
-    },
+    }
 ]

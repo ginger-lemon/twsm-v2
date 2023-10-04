@@ -1,10 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// get map/text data 
 const apiKey = process.env.MY_API_KEY
 
-// https://npgis.cpami.gov.tw/api/v1/SpeciesIntro?name=${value}&apiKey=${apiKey} 台灣生物多樣性的這支 api 有 CORS 問題
 export const fetchTextDatas = createAsyncThunk(
     'fetch/fetchTextDatas',
     async (value) => {
@@ -13,15 +11,19 @@ export const fetchTextDatas = createAsyncThunk(
     }
 )
 
-// 1, 3 有 CORS 問題，第二支不同 API 但有參數的問題
-// https://npgis.cpami.gov.tw/npgis/geoserver/npgis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=npgis:speciesrecord&viewparams=speciesName:${value} 新
-// https://map.tbn.org.tw/geoserver/wfs?request=getFeature&typeName=species:occurrence&CQL_FILTER=scientificname='${value}'&outputformat=json 無法讀到學名
-// https://npgis.cpami.gov.tw/openapi/v1/api/InvestigateRecord?apiKey=${apiKey}&speciesName=${value} 舊
+// 改接 mock data 
+// https://npgis.cpami.gov.tw/openapi/v1/api/InvestigateRecord?apiKey=${apiKey}&speciesName=${value} CORS issue
 export const fetchMapDatas = createAsyncThunk(
-    'fetch/fetchMapDatas',
+    'fetch/fetchMapDatas',    
     async (value) => {
-        const { data } = await axios.get(`https://npgis.cpami.gov.tw/npgis/geoserver/npgis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=npgis:speciesrecord&viewparams=speciesName:${value}`)
-        return data
+        // 使用 encodeURIComponent/decodeURIComponent 處理中文編碼問題
+        const encodeValue = encodeURIComponent(value)
+        const filename = `${encodeValue}.json`
+        // using import to fetch local JSON files 
+        const response = await import(`../../api/mapdata/${filename}`)
+        // 'default' for using all of the content
+        const data = response.default
+        return data.results
     }
 )
 
@@ -39,8 +41,8 @@ export const fetchSlice = createSlice({
     name: 'fetch',
     initialState,
     reducers: {
-        setFetchMapValue: (state, action) => {
-            st
+        startFetch: (state) => {
+            state.fetch
         }
     },
     extraReducers: (builder) => {

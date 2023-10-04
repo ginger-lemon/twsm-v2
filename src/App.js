@@ -3,7 +3,7 @@ import './styles/global.css'
 import Home from "./pages/Home/Home";
 import History from "./pages/History/Histoy";
 import Bookmark from "./pages/Bookmark/Bookmark";
-import Overview from "./pages/Overview/Overview";
+import Results from "./pages/Results/Results";
 import Features from "./pages/Features/Features";
 import Utilization from "./pages/Utilization/Utilization";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -15,7 +15,7 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/history" element={<History />} />
                 <Route path="/bookmark" element={<Bookmark />} />
-                <Route path="/overview" element={<Overview />} />
+                <Route path="/results" element={<Results />} />
                 {/* 確認是否需要將 features 與 utilization 放到 overview 底下 */}
                 <Route path="/features" element={<Features />} />
                 <Route path="/utilization" element={<Utilization />} />

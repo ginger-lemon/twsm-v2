@@ -1,49 +1,36 @@
 import React, { useRef, useState } from "react";
-import Styles from './SearchInput.module.css'
+import Styles from './SearchBar.module.css'
 import SearchIcon from '../../images/icon-search.svg'
 import HistorySearch from './HistorySearch'
 import IconButton from '../IconButton/IconButton'
+
 import { useSelector, useDispatch } from "react-redux";
 import { setInputValue } from '../../redux/search/searchSlice'
-import { fetchMapDatas, fetchTextDatas, getSpicesDatas } from "../../redux/fetch/fetchSlice";
-import { useNavigate } from "react-router-dom";
 
-function SearchInput() {
+const SearchBar = ({ handleSubmit, handleKeydown }) => {
     const [isFocus, setIsFocus] = useState(false);
     const inputRef = useRef()
     const inputValue = useSelector(state => state.search.inputValue)
+
     const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const value = e.target.value 
+        console.log(value)
         dispatch(setInputValue(value))
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        try {
-            dispatch(fetchTextDatas(inputValue))
-            dispatch(fetchMapDatas(inputValue))
-
-            navigate('/overview')
-        } catch (error) {
-            console.log(error)
-        }
-        
-        navigate('/overview')
     }
 
     return (
         <div className={Styles.container}>
             <form 
-                name="queryWord"
+                id="search"
+                name="search"
                 onSubmit={handleSubmit}
             >
                 <div className={Styles.form}>
                     <input
                         className={Styles.input}
-                        placeholder="請輸入香料名稱"
+                        placeholder="請選擇下方的香料名稱"
                         value={inputValue}
                         onChange={handleChange}
                         ref={inputRef}
@@ -53,9 +40,10 @@ function SearchInput() {
                         onBlur={() => {
                             setIsFocus(false)
                         }}
+                        onKeyDown={handleKeydown}
                     >
                     </input>
-                    <IconButton>
+                    <IconButton buttonType="submit">
                         <img 
                             src={SearchIcon}
                             className={Styles.searchIcon}
@@ -77,5 +65,5 @@ function SearchInput() {
     );
 }
 
-export default SearchInput
+export default SearchBar
 

@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import History from "../../pages/History/Histoy";
 import Bookmark from "../../pages/Bookmark/Bookmark";
-import Overview from "../../pages/Overview/Overview";
 
 function Nav() {
     return (

@@ -2,16 +2,18 @@ import React from "react";
 import Styles from './CategroyBar.module.css'
 import InfoCard from "../InfoCard/InfoCard";
 import { Link } from "react-router-dom";
-import Overview from "../../pages/Overview/Overview";
+
+import Results from "../../pages/Results/Results";
 import Features from "../../pages/Features/Features";
 import Utilization from "../../pages/Utilization/Utilization";
+
 
 function CategroiesBar({ activeP }) {
     return(
         <InfoCard>
             <div className={Styles.categroy}>
                 {/* TODO: 加入 template 處理 :spiceName */}
-                <Link to='/overview' element={<Overview />}>
+                <Link to='/results' element={<Results />}>
                     <div className={Styles.categroyName}>
                         <p 
                             className={activeP === 'overview' ? Styles.activeP : ''}

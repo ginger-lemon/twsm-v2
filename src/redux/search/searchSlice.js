@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // 搜尋 input 欄位
 const initialState = {
     inputValue: '',
-    selectedKeyword: ''
+    selectedValue: ''
 }
 
 export const searchSlice = createSlice({
@@ -16,10 +16,10 @@ export const searchSlice = createSlice({
                 inputValue: action.payload
             }
         },
-        setSelectedKeyword: (state, action) => {
+        setSelectedValue: (state, action) => {
             return {
                 ...state,
-                selectedKeyword: action.payload
+                selectedValue: action.payload
             }
         }
     }
@@ -27,7 +27,7 @@ export const searchSlice = createSlice({
 
 export const { 
     setInputValue,
-    setSelectedKeyword, 
+    setSelectedValue, 
 } = searchSlice.actions;
 
 export default searchSlice.reducer;
