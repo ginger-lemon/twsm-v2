@@ -1,16 +1,34 @@
-import React, { Children } from "react";
+import React, { useState } from "react";
 import Styles from './Panel.module.css'
-import CloseButton from "./CloseButton";
 
-function Panel({children}) {
-    // 處理按下 Close 元件會把 panel 收起來（display: none + 淡出動畫效果？）
-    // 把 CloseButton 統整進來
+const Panel = ({ children }) => {
+    const [isClose, setIsClose] = useState(false)
+    // 處理按下 Close 元件會把 panel 收起來（display: none + 淡出動畫效果？
+
+    const panelStyle = isClose ? `${Styles.panel} ${Styles.panelClosed}` : Styles.panel
+    const buttonStyle = isClose ? Styles.buttonWrapperClosed : Styles.buttonWrapper
+ 
+    const handleClick = () => {
+        setIsClose(!isClose)
+        console.log('press button')
+    }
+    
+
     return (
-        <div className={Styles.section}>
-            <div>
-                {children}
+        <div className={Styles.container}>
+            <div 
+                className={panelStyle}
+            >
+                { children }
             </div>
-            <CloseButton />
+            <div className={buttonStyle}>
+                <button
+                    className={Styles.button}
+                    onClick={handleClick}
+                >
+                    {isClose ? 'Open' : 'Close'}
+                </button>
+            </div>
         </div>
     );
 }
