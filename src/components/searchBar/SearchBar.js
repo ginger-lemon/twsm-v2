@@ -1,23 +1,34 @@
 import React, { useRef, useState } from "react";
 import Styles from './SearchBar.module.css'
 import SearchIcon from '../../images/icon-search.svg'
-import HistorySearch from './HistorySearch'
 import IconButton from '../IconButton/IconButton'
+import CloseIcon from '../../images/icon-remove.svg'
 
 import { useSelector, useDispatch } from "react-redux";
-import { setInputValue } from '../../redux/search/searchSlice'
+import { setInputValue, setSelectedValue } from '../../redux/search/searchSlice'
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = ({ handleSubmit, handleKeydown }) => {
-    const [isFocus, setIsFocus] = useState(false);
-    const inputRef = useRef()
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     const inputValue = useSelector(state => state.search.inputValue)
 
-    const dispatch = useDispatch()
+    const isInitialInputValue = inputValue === '' // true | false
+    const submitIcon = isInitialInputValue ? SearchIcon: CloseIcon
+
 
     const handleChange = (e) => {
         const value = e.target.value 
         console.log(value)
         dispatch(setInputValue(value))
+    }
+
+    const backToHome = (e) => {
+        e.preventDefault()
+        dispatch(setInputValue('')) // resetState
+        dispatch(setSelectedValue('')) // resetState
+        navigate('/')
     }
 
     return (
@@ -33,34 +44,21 @@ const SearchBar = ({ handleSubmit, handleKeydown }) => {
                         placeholder="請選擇下方的香料名稱"
                         value={inputValue}
                         onChange={handleChange}
-                        ref={inputRef}
-                        onFocus={() => {
-                            setIsFocus(true)
-                        }}
-                        onBlur={() => {
-                            setIsFocus(false)
-                        }}
                         onKeyDown={handleKeydown}
                     >
                     </input>
-                    <IconButton buttonType="submit">
+                    <IconButton 
+                        buttonType="submit"
+                        handleClick={isInitialInputValue ? null : backToHome}
+                    >
                         <img 
-                            src={SearchIcon}
+                            src={submitIcon}
                             className={Styles.searchIcon}
                             alt=""
                         />
                     </IconButton>
                 </div>
             </form>
-            {/* 歷史搜尋紀錄 */}
-            {/* 當引入資料時需加上短路邏輯確認有歷史紀錄 */}
-            {/* <div
-                className={Styles.history}
-                style = {{ display: isFocus ? 'block' : 'none' }}
-            >
-                
-                <HistorySearch />
-            </div> */}
         </div>
     );
 }

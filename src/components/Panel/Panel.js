@@ -3,8 +3,7 @@ import Styles from './Panel.module.css'
 
 const Panel = ({ children }) => {
     const [isClose, setIsClose] = useState(false)
-    // 處理按下 Close 元件會把 panel 收起來（display: none + 淡出動畫效果？
-
+    
     const panelStyle = isClose ? `${Styles.panel} ${Styles.panelClosed}` : Styles.panel
     const buttonStyle = isClose ? Styles.buttonWrapperClosed : Styles.buttonWrapper
  

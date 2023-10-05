@@ -41,8 +41,9 @@ export const fetchSlice = createSlice({
     name: 'fetch',
     initialState,
     reducers: {
-        startFetch: (state) => {
-            state.fetch
+        resetMapData: (state) => {
+            state.mapData = {}
+            state.mapStatus = 'idle'
         }
     },
     extraReducers: (builder) => {

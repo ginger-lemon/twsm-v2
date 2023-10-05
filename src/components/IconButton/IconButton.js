@@ -3,11 +3,12 @@ import Styles from './IconButton.module.css'
 
 // button 內包 icon 
 
-function IconButton({children, buttonType}) {
+function IconButton({children, buttonType, handleClick}) {
     return (
         <div className={Styles.button}>
             <button 
                 type={buttonType}
+                onClick={handleClick}
             >
                 {children}
             </button>

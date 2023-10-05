@@ -45,10 +45,6 @@ const Home = () => {
         dispatch(fetchMapDatas(value))
 
         navigate('/results')
-
-        // if (textStatus !== 'idle') {
-        //     navigate('/results')
-        // }
     }
 
     return (
