@@ -4,41 +4,38 @@ import InfoCard from "../InfoCard/InfoCard";
 import { Link } from "react-router-dom";
 
 import Results from "../../pages/Results/Results";
-import Features from "../../pages/Features/Features";
 import Utilization from "../../pages/Utilization/Utilization";
+import Flavor from "../../pages/Flavor/Flavor";
 
 
-function CategroiesBar({ activeP }) {
+const CategroiesBar = ({ activeP }) => {
     return(
         <InfoCard>
             <div className={Styles.categroy}>
-                {/* TODO: 加入 template 處理 :spiceName */}
                 <Link to='/results' element={<Results />}>
                     <div className={Styles.categroyName}>
                         <p 
-                            className={activeP === 'overview' ? Styles.activeP : ''}
+                            className={activeP === 'behavior' ? Styles.activeP : ''}
                         >
-                            習性
+                            概述
                         </p>
                     </div>
                 </Link>
-                {/* TODO: 加入 template 處理 :spiceName */}
-                <Link to='/features' element={<Features />}>
+                <Link to='/flavor' element={<Flavor />}>
                     <div className={Styles.categroyName}>
                         <p
-                            className={activeP === 'features' ? Styles.activeP : ''}
+                            className={activeP === 'flavor' ? Styles.activeP : ''}
                         >
-                            特徵
+                            氣味
                         </p>
                     </div>
                 </Link>
-                {/* TODO: 加入 template 處理 :spiceName */}
                 <Link to='/utilization' element={<Utilization />}>
                     <div className={Styles.categroyName}>
                         <p
                             className={activeP === 'utilization' ? Styles.activeP : ''}
                         >
-                            分佈
+                            應用
                         </p>
                     </div>
                 </Link>

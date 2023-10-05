@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Styles from './SearchBar.module.css'
 import SearchIcon from '../../images/icon-search.svg'
 import IconButton from '../IconButton/IconButton'
@@ -17,12 +17,12 @@ const SearchBar = ({ handleSubmit, handleKeydown }) => {
     const isInitialInputValue = inputValue === '' // true | false
     const submitIcon = isInitialInputValue ? SearchIcon: CloseIcon
 
-
-    const handleChange = (e) => {
-        const value = e.target.value 
-        console.log(value)
-        dispatch(setInputValue(value))
-    }
+    // for fetching data so block
+    // const handleChange = (e) => {
+    //     const value = e.target.value 
+    //     console.log(value)
+    //     dispatch(setInputValue(value))
+    // }
 
     const backToHome = (e) => {
         e.preventDefault()
@@ -43,7 +43,7 @@ const SearchBar = ({ handleSubmit, handleKeydown }) => {
                         className={Styles.input}
                         placeholder="請選擇下方的香料名稱"
                         value={inputValue}
-                        onChange={handleChange}
+                        // onChange={handleChange}
                         onKeyDown={handleKeydown}
                     >
                     </input>

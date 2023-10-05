@@ -20,7 +20,7 @@ function Utilization() {
                 />
                 <InfoCard>
                     <h3>標題</h3>
-                    <p>{usableData && usableData.Distri}</p>
+                    <p>應用～準備中～</p>
                 </InfoCard>
             </div>
         </SubLayout>
