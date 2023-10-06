@@ -10,7 +10,6 @@ const Panel = ({ children }) => {
  
     const handleClick = () => {
         setIsClose(!isClose)
-        console.log('press button')
     }
 
     return (

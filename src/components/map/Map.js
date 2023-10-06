@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import './Map.css'
-import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import L from 'leaflet'
 import MapIcon from '../../images/icon-mark.svg'
+import LoadingIcon from '../../images/icon-loading.svg'
+
 import { useDispatch, useSelector } from "react-redux";
+
+// TODO: re-render 
 
 const Map = () => {
     // get map ref
     const [map, setMap] = useState(null)
+    const [showFailedDialog, setShowFailedDialog] = useState(true)
 
     const inputValue = useSelector(state => state.search.inputValue)
     const mapData = useSelector(state => state.fetch.mapData)
@@ -18,8 +23,6 @@ const Map = () => {
         iconSize: [35, 35]
     });
 
-    // TODO: 處理 re-render 問題
-
     const popups = 
         mapStatus === 'successed' && mapData.map((data, id) => (
             <Marker
@@ -27,12 +30,61 @@ const Map = () => {
                 icon={customIcon}
                 position={[data.lat, data.lon]}
             >
-                <Popup>這裡曾觀測到：{inputValue}</Popup>
+                <Popup>這裡曾發現：{inputValue}</Popup>
             </Marker>
         ))
 
+    const loadingDialig = (
+        <div className="loading-wrapper">
+            <div>
+                <img 
+                    className="loading-img"
+                    src={LoadingIcon}
+                    alt=""
+                />
+                <p>Loading...</p>
+            </div>
+        </div>
+    )
+
+    // close failedDialog
+    const handleShowFailedDialog = () => {
+        setShowFailedDialog(false)
+        console.log('click')
+    }
+
+    const failedDialog = (
+        <div 
+            className="failed-wrapper"
+            onClick={handleShowFailedDialog}
+        >
+            <h4>歹勢！！還沒有更新位置紀錄</h4>
+            <p>點我關閉</p>
+        </div>
+    )
+
+    // 根據狀態改變的提示視窗
+    let renderedDialog;
+
+    switch (mapStatus) {
+        case 'loading': 
+            renderedDialog = loadingDialig
+            break;
+        
+        case 'failed':
+            renderedDialog = showFailedDialog && failedDialog
+            break;
+
+        case 'successed':
+            renderedDialog = null
+            break;
+
+        default:
+            renderedDialog = null
+    }
+
     return(
-        <div>
+        <div className="map-container">
             <MapContainer
                 ref={setMap}
                 center={[23.697809, 120.480518]}
@@ -45,6 +97,7 @@ const Map = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
             </MapContainer>
+            {renderedDialog}
         </div>
     );
 }

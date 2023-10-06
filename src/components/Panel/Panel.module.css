@@ -58,7 +58,7 @@
 
     @media (max-width: 768px) {
         position: absolute;
-        left: 45vw;
+        left: 40vw;
         top: 100%;
         z-index: -2;
         transition: top 0.3s ease;

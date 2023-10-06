@@ -1,4 +1,3 @@
-/* 最上方的圖片欄位 */
 .img {
     width: 100%;
     height: 240px;
@@ -66,63 +65,56 @@
 } */
 
 .scientifiName {
-    margin: 0;
     color: var(--asparagus);
     font-style: italic;
     font-size: 21px;
 }
 
-/* active */
-.activeCategroyName {
-    color: var(--pumpkin);
-}
-
-.activeCategroyName::after {
-    content: '';
-    display: block;
-    width: 80%;
-    border: 3px solid var(--pumpkin);
-    border-radius: 5px;
-    transform: translateY(15px);
-}
- 
-/* result 部分 */
-.tabBar {
-    border-bottom: 1px solid var(--light-gray);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.tab {
-    /* 清除按鈕預設樣式 */
-    border: none;
-    background-color: var(--white);
-    padding: 20px;
-}
-
-.tab:hover {
+/* loading */
+.loadingPlaceholder {
+    width: 200px;
+    height: 21px;
     background-color: var(--light-gray);
-    color: var(--dark-moss-green);
-    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 6px;
 }
 
-.tab > a {
-    color: var(--dark-quartz-grey);
-    font-family: var(--font-family);
-    font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-p);
+.loadingImg {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 40%;
 }
 
-.activeP {
-    color: var(--pumpkin);
+.loadingIconWrapper {
+    width: inherit;
+    height: 150px;
+    position: relative;
 }
 
-.activeP::after {
-    content: '';
-    display: block;
-    width: 80%;
-    border: 3px solid var(--pumpkin);
-    border-radius: 5px;
-    transform: translateY(20px);
+.loadingIcon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 43%;
+    top: 25%;
+    animation: loading 1s linear infinite;
+
+    /* @media (max-width: 786px) {
+        left: 175px;
+        top: 50%;
+    } */
+}
+
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg) }
+}
+
+/* failed */
+.failed {
+    position: absolute;
+    top: 50%;
+    left: 45%;
 }
