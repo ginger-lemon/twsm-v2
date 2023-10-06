@@ -4,7 +4,8 @@ import PlantIcon from '../../images/icon-plant.svg'
 import RemoveIcon from '../../images/icon-remove.svg'
 import IconButton from "../IconButton/IconButton";
 
-function HistorySearch() {
+const HistorySearch = () => {
+    
     return (
         <div className={Styles.history}>
                 <img

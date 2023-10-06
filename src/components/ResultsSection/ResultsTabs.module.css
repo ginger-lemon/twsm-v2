@@ -1,0 +1,49 @@
+.tabBar {
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tab {
+    /* 清除按鈕預設樣式 */
+    border: none;
+    background-color: var(--white);
+    padding: 20px;
+}
+
+.tab:hover {
+    background-color: var(--light-gray);
+    color: var(--dark-moss-green);
+    cursor: pointer;
+}
+
+.tab > a {
+    color: var(--dark-quartz-grey);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-p);
+}
+
+/* 按下分頁標籤的效果 */
+.activeTab {
+    border: none;
+    background-color: var(--white);
+    padding: 20px;
+}
+
+.activeTab > a {
+    color: var(--pumpkin);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-p);
+}
+
+.activeTab::after {
+    content: '';
+    display: block;
+    width: 80%;
+    border: 3px solid var(--pumpkin);
+    border-radius: 5px;
+    transform: translateY(20px);
+}

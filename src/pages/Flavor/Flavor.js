@@ -1,24 +1,25 @@
 import React from "react";
 import Styles from './Flavor.module.css'
-import CategroiesBar from "../../components/CategroyBar/CategroyBar";
-import InfoCard from "../../components/InfoCard/InfoCard";
-import SubLayout from "../../layout/SubLayout/SubLayout";
-import { useSelector } from "react-redux";
+import MainLayout from "../../layout/mainLayout/MainLayout";
+import Panel from "../../components/Panel/Panel";
+import ResultsTabs from "../../components/ResultsSection/ResultsTabs";
 
 const Flavor = () => {
-    
+
     return (
-        <SubLayout>
-            <div className={Styles.section}>
-                <CategroiesBar 
-                    activeP='flavor'
-                />
-                <InfoCard>
-                    <p>氣味</p>
-                </InfoCard>
-            </div>
-        </SubLayout>
+        <MainLayout>
+           <Panel>
+                <div className={Styles.wrapper}>
+                    <ResultsTabs
+                        activeTab='flavor'
+                    >
+                        香味
+                    </ResultsTabs>
+                </div>
+           </Panel>
+        </MainLayout>
     );
 } 
 
 export default Flavor;
+

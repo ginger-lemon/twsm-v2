@@ -34,15 +34,16 @@
 }
 
 /* 基本資訊與其他資訊 */
-.basicInfo {
+/* .basicInfo {
     padding: 0 20px;
-}
+} */
 
-.basicInfo > div {
+/* 有 tags 時使用 */
+/* .basicInfo > div {
     display: flex;
     flex-direction: row;
     gap: 20px;
-}
+} */
 
 .basicInfo > :nth-child(2) {
     margin-bottom: 10px;
@@ -55,14 +56,14 @@
     color: var(--dark-moss-green);
 }
 
-.tags {
-    /* border: 1px solid red; */
+/* .tags {
+    border: 1px solid red;
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .scientifiName {
     margin: 0;
@@ -84,9 +85,44 @@
     border-radius: 5px;
     transform: translateY(15px);
 }
+ 
+/* result 部分 */
+.tabBar {
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
-/* 欄位內容 */
-.overview {
-    padding: 0 20px;
-    /* background-color: bisque; */
+.tab {
+    /* 清除按鈕預設樣式 */
+    border: none;
+    background-color: var(--white);
+    padding: 20px;
+}
+
+.tab:hover {
+    background-color: var(--light-gray);
+    color: var(--dark-moss-green);
+    cursor: pointer;
+}
+
+.tab > a {
+    color: var(--dark-quartz-grey);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-p);
+}
+
+.activeP {
+    color: var(--pumpkin);
+}
+
+.activeP::after {
+    content: '';
+    display: block;
+    width: 80%;
+    border: 3px solid var(--pumpkin);
+    border-radius: 5px;
+    transform: translateY(20px);
 }

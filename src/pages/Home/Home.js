@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Styles from './Home.module.css'
-import MainLayout from "../../layout/MainLayout/MainLayout";
+import MainLayout from "../../layout/mainLayout/MainLayout";
 import SearchBar from "../../components/searchBar/SearchBar";
 import SearchHelperCard from "../../components/SearchHelperCard/SearchHelperCard";
 
@@ -14,6 +14,7 @@ import { setInputValue, setSelectedValue } from "../../redux/search/searchSlice"
 
 const Home = () => {
     const dispatch = useDispatch()
+    
     const inputValue = useSelector(state => state.search.inputValue)
     const textStatus = useSelector(state => state.fetch.textStatus)
 

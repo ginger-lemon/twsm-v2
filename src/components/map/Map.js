@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import './Map.css'
 import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import L from 'leaflet'
@@ -6,7 +6,9 @@ import MapIcon from '../../images/icon-mark.svg'
 import { useDispatch, useSelector } from "react-redux";
 
 const Map = () => {
-    const [map, setMap] = useState()
+    // get map ref
+    const [map, setMap] = useState(null)
+
     const inputValue = useSelector(state => state.search.inputValue)
     const mapData = useSelector(state => state.fetch.mapData)
     const mapStatus = useSelector(state => state.fetch.mapStatus)
@@ -15,6 +17,8 @@ const Map = () => {
         iconUrl: MapIcon,
         iconSize: [35, 35]
     });
+
+    // TODO: 處理 re-render 問題
 
     const popups = 
         mapStatus === 'successed' && mapData.map((data, id) => (

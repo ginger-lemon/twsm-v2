@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Styles from './SearchBar.module.css'
 import SearchIcon from '../../images/icon-search.svg'
 import IconButton from '../IconButton/IconButton'

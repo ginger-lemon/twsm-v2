@@ -8,7 +8,7 @@ export const fetchTextDatas = createAsyncThunk(
     async (value) => {
         const { data } = await axios.get(`https://npgis.cpami.gov.tw/api/v1/SpeciesIntro?name=${value}&apiKey=${apiKey}`)
         const result = data.filter( 
-            data => data.ChineseName === value || data.ChineseName.length === value.length 
+            data => data.ChineseName === value || data.ChineseName.length === value.length || data.Kingdom === '植物界'
         )
         return result[0]
     }

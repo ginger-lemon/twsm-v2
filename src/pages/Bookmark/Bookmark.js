@@ -1,22 +1,21 @@
 import React from "react";
 import Styles from './Bookmark.module.css'
+import MainLayout from "../../layout/mainLayout/MainLayout";
+import Panel from "../../components/Panel/Panel";
 import InfoCard from "../../components/InfoCard/InfoCard";
-import SubLayout from "../../layout/SubLayout/SubLayout";
 
-function Bookmark() {
+const Bookmark = () => {
     return (
-        <SubLayout>
-            <div className={Styles.section}>
-                <InfoCard>
-                    顯示我的最愛
-                </InfoCard>
-                <InfoCard>
-                    顯示我的最愛2
-                </InfoCard>
-            </div>
-        </SubLayout>
+        <MainLayout>
+            <Panel>
+                <div className={Styles.wrapper}>
+                    <InfoCard>
+                        顯示我的最愛
+                    </InfoCard>
+                </div>
+            </Panel>
+        </MainLayout>
     );
 }
 
 export default Bookmark;
-

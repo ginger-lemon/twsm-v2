@@ -1,22 +1,21 @@
 import React from "react";
 import Styles from './History.module.css'
-import InfoCard from '../../components/InfoCard/InfoCard'
-import SubLayout from "../../layout/SubLayout/SubLayout";
+import MainLayout from "../../layout/mainLayout/MainLayout";
+import Panel from "../../components/Panel/Panel";
+import InfoCard from "../../components/InfoCard/InfoCard";
 
-function History() {
+const History = () => {
     return (
-        <SubLayout>
-            <div className={Styles.section}>
+        <MainLayout>
+            <Panel>
+                <div className={Styles.wrapper}>
                     <InfoCard>
                         顯示搜尋紀錄
                     </InfoCard>
-                    <InfoCard>
-                        顯示搜尋紀錄2
-                    </InfoCard>
                 </div>
-        </SubLayout>
+            </Panel>
+        </MainLayout>
     );
 }
 
 export default History;
-

@@ -1,7 +1,7 @@
 import React from "react";
 import Styles from './InfoCard.module.css'
 
-function InfoCard({ children }) {
+const InfoCard = ({ children }) => {
     return (
         <div className={Styles.infoCard}>  
             {children}

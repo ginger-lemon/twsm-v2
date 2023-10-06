@@ -1,13 +1,5 @@
-.section {
+.wrapper {
     position: absolute;
-    top: 100px;
+    top: 80px;
     width: 100%;
-}
-
-.section > div {
-    padding-left: 20px;
-}
-
-.section > div:first-child {
-    padding: 0;
 }
