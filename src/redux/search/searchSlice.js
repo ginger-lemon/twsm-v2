@@ -21,6 +21,13 @@ export const searchSlice = createSlice({
                 ...state,
                 selectedValue: action.payload
             }
+        },
+        resetValue: (state) => {
+            return {
+                ...state,
+                inputValue: '',
+                selectedValue: '',
+            }
         }
     }
 })
@@ -28,6 +35,7 @@ export const searchSlice = createSlice({
 export const { 
     setInputValue,
     setSelectedValue, 
+    resetValue,
 } = searchSlice.actions;
 
 export default searchSlice.reducer;

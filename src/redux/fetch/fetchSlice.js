@@ -8,7 +8,7 @@ export const fetchTextDatas = createAsyncThunk(
     async (value) => {
         const { data } = await axios.get(`https://npgis.cpami.gov.tw/api/v1/SpeciesIntro?name=${value}&apiKey=${apiKey}`)
         const result = data.filter( 
-            data => data.Kingdom === '植物界' 
+            data => data.ChineseName === value || data.ChineseName.length === value.length 
         )
         return result[0]
     }
@@ -44,9 +44,15 @@ export const fetchSlice = createSlice({
     name: 'fetch',
     initialState,
     reducers: {
-        resetMapData: (state) => {
-            state.mapData = {}
-            state.mapStatus = 'idle'
+        resetDatas: (state) => {
+            return {
+                ...state,
+                textData : null,
+                mapData : {},
+                textStatus : 'idle',
+                mapStatus : 'idle',
+                }
+            
         }
     },
     extraReducers: (builder) => {
@@ -75,5 +81,7 @@ export const fetchSlice = createSlice({
             })
     }
 })
+
+export const { resetDatas } = fetchSlice.actions
 
 export default fetchSlice.reducer;

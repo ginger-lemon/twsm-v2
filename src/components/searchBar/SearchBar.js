@@ -5,8 +5,9 @@ import IconButton from '../IconButton/IconButton'
 import CloseIcon from '../../images/icon-remove.svg'
 
 import { useSelector, useDispatch } from "react-redux";
-import { setInputValue, setSelectedValue } from '../../redux/search/searchSlice'
+import { resetValue } from '../../redux/search/searchSlice'
 import { useNavigate } from "react-router-dom";
+import { resetDatas } from "../../redux/fetch/fetchSlice";
 
 const SearchBar = ({ handleSubmit, handleKeydown }) => {
     const dispatch = useDispatch()
@@ -26,8 +27,8 @@ const SearchBar = ({ handleSubmit, handleKeydown }) => {
 
     const backToHome = (e) => {
         e.preventDefault()
-        dispatch(setInputValue('')) // resetState
-        dispatch(setSelectedValue('')) // resetState
+        dispatch(resetValue())
+        dispatch(resetDatas())
         navigate('/')
     }
 

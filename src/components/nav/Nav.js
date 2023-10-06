@@ -4,23 +4,33 @@ import IconButton from '../IconButton/IconButton'
 import logoIcon from '../../images/logo.svg'
 import RecentIcon from '../../images/icon-recent.svg'
 import BookmarkIcon from '../../images/icon-bookmark.svg'
-import { Link } from "react-router-dom";
-import Home from "../../pages/Home/Home";
 import History from "../../pages/History/Histoy";
 import Bookmark from "../../pages/Bookmark/Bookmark";
 
-function Nav() {
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { resetValue } from "../../redux/search/searchSlice";
+import { resetDatas } from "../../redux/fetch/fetchSlice";
+
+const Nav = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const backToHome = () => {
+        dispatch(resetValue())
+        dispatch(resetDatas())
+        navigate('/')
+    }
+
     return (
         <nav className={Styles.nav}>
             <div className={Styles.navBlock}>
-                <IconButton>
-                    <Link to="/" element={<Home />}>
+                <IconButton handleClick={backToHome}>
                         <img 
                             src={logoIcon} 
                             alt=""
                             className={Styles.logoIcon}
                         />
-                    </Link>
                 </IconButton>
             </div>
             <div className={Styles.navBlock}>

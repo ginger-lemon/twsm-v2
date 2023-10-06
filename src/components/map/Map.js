@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './Map.css'
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, Popup, TileLayer, useMap } from "react-leaflet";
 import L from 'leaflet'
 import MapIcon from '../../images/icon-mark.svg'
 import { useDispatch, useSelector } from "react-redux";
 
 const Map = () => {
-    const mapRef = useRef(null)
+    const [map, setMap] = useState()
     const inputValue = useSelector(state => state.search.inputValue)
     const mapData = useSelector(state => state.fetch.mapData)
     const mapStatus = useSelector(state => state.fetch.mapStatus)
@@ -16,29 +16,10 @@ const Map = () => {
         iconSize: [35, 35]
     });
 
-    // 地圖中心向右平移
-    const targetCoordinates = [23.697809, 120.960518]
-
-    if (mapRef.current) {
-        const map = mapRef.current.leafletElemrnt
-    }
-    
-    // useEffect(() => {
-    //     if (mapRef.current) {
-            // leafletElement : react-leaflet 指向 leaflet address 的 reference
-    //         const map = mapRef.current.leafletElement
-    //         console.log(map)
-    //         map.panTo(targetCoordinates, { animate: false })
-    //         map.panBy([400, 0], { animate: false })
-    //     } else {
-    //         console.log("no mapRef.current")
-    //     }
-    // }, [])
-
     const popups = 
-        mapStatus === 'successed' && mapData.map((data, index) => (
+        mapStatus === 'successed' && mapData.map((data, id) => (
             <Marker
-                key={index}
+                key={id}
                 icon={customIcon}
                 position={[data.lat, data.lon]}
             >
@@ -49,8 +30,8 @@ const Map = () => {
     return(
         <div>
             <MapContainer
-                ref={mapRef}
-                center={targetCoordinates}
+                ref={setMap}
+                center={[23.697809, 120.480518]}
                 zoom={8}
                 scrollWheelZoom={true}
             >
@@ -65,6 +46,3 @@ const Map = () => {
 }
 
 export default Map;
-
-// https://github.com/PaulLeCam/react-leaflet/issues/841
-// react-leaflet v4 移除 whenCreated ，暫時無其他方式取得 ref.current 

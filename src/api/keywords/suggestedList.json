@@ -1,30 +1,30 @@
 [
     {
-        "key": "Litsea cubeba",
+        "id": "Litsea cubeba",
         "name": "山胡椒",
         "scientificname": "Litsea cubeba"
     }, {
-        "key": "Zanthoxylum ailanthoides",
+        "id": "Zanthoxylum ailanthoides",
         "name": "紅刺蔥",
         "scientificname": "Zanthoxylum ailanthoides"
     }, {
-        "key": "Cinnamomum osmophloeum",
+        "id": "Cinnamomum osmophloeum",
         "name": "土肉桂",
         "scientificname": "Cinnamomum osmophloeum"
     }, {
-        "key": "Aralia cordata",
+        "id": "Aralia cordata",
         "name": "食用土當歸",
         "scientificname": "Aralia cordata"
     }, {
-        "key": "Rhus javanica",
+        "id": "Rhus javanica",
         "name": "羅氏鹽膚木",
         "scientificname": "Rhus javanica"
     }, {
-        "key": "Perilla frutescens",
+        "id": "Perilla frutescens",
         "name": "紫蘇",
         "scientificname": "Perilla frutescens"
     }, {
-        "key": "Alpinia zerumbet",
+        "id": "Alpinia zerumbet",
         "name": "臺灣月桃",
         "scientificname": "Alpinia zerumbet"
     }
