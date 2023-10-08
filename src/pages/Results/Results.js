@@ -10,7 +10,7 @@ import LoadingIcon from '../../images/icon-loading.svg'
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { resetValue } from "../../redux/search/searchSlice";
+import { resetValue, setInputValue } from "../../redux/search/searchSlice";
 import { resetDatas } from "../../redux/fetch/fetchSlice";
 
 const Results = () => {
@@ -19,8 +19,7 @@ const Results = () => {
 
     const textData = useSelector(state => state.fetch.textData)
     const textStatus = useSelector(state => state.fetch.textStatus)
-
-    const imgSrc = 'https://c2.staticflickr.com/2/1897/42413024160_93da2dd7dc_b.jpg' 
+    const spiceData = useSelector(state => state.fetch.spiceData)
 
     const loadingLayout = (
         <>
@@ -56,7 +55,7 @@ const Results = () => {
             <div className={Styles.img}>
                     {/* 使用 mock data */}
                     <img 
-                        src={imgSrc}
+                        src={spiceData.imgURL}
                         alt=""
                     />
                 </div>
@@ -107,7 +106,7 @@ const Results = () => {
 
         case 'failed':
             renderedLayout = failedLayout
-            dispatch(resetValue())
+            dispatch(setInputValue(''))
             dispatch(resetDatas())
             setTimeout(() => {
                 navigate('/')

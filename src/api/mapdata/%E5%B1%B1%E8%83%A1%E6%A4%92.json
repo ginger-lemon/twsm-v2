@@ -1,7 +1,9 @@
 {
-    "total_results": 35,
-    "page": 1,
-    "per_page": 20,
+    "name": "土胡椒",
+    "tags": ["原生"],
+    "imgURL" : "https://c2.staticflickr.com/2/1897/42413024160_93da2dd7dc_b.jpg",
+    "flavor": "有薑與胡椒的香氣，全株皆可食用。果實曬乾後成紫黑色，外型似黑胡椒粒。",
+    "utilization": "花朵可泡茶、嫩葉可入菜，許多原住民族將種子當成去腥的香料或鹽巴的替代品。",
     "results": [
     {
         "chName": "山胡椒",

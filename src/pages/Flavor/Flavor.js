@@ -3,8 +3,10 @@ import Styles from './Flavor.module.css'
 import MainLayout from "../../layout/mainLayout/MainLayout";
 import Panel from "../../components/Panel/Panel";
 import ResultsTabs from "../../components/ResultsSection/ResultsTabs";
+import { useSelector } from "react-redux";
 
 const Flavor = () => {
+    const data = useSelector(state => state.fetch.spiceData)
 
     return (
         <MainLayout>
@@ -13,7 +15,8 @@ const Flavor = () => {
                     <ResultsTabs
                         activeTab='flavor'
                     >
-                        香味
+                        <h4>香氣</h4>
+                        <p>{data.flavor}</p>
                     </ResultsTabs>
                 </div>
            </Panel>

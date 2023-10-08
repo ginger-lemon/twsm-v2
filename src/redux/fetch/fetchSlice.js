@@ -16,7 +16,7 @@ export const fetchTextDatas = createAsyncThunk(
 
 // 改接 mock data 
 // https://npgis.cpami.gov.tw/openapi/v1/api/InvestigateRecord?apiKey=${apiKey}&speciesName=${value} CORS issue
-export const fetchMapDatas = createAsyncThunk(
+export const fetchSpiceDatas = createAsyncThunk(
     'fetch/fetchMapDatas',    
     async (value) => {
         // 使用 encodeURIComponent/decodeURIComponent 處理中文編碼問題
@@ -26,18 +26,19 @@ export const fetchMapDatas = createAsyncThunk(
         const response = await import(`../../api/mapdata/${filename}`)
         // 'default' for using all of the content
         const data = response.default
-        return data.results
+        return data
     }
 )
 
 // set reducers
 const initialState = {
     textData: null,
-    mapData: {},
     textStatus: 'idle', // loading | successed | failed
-    mapStatus: 'idle',
     textError: null,
-    mapError: null,
+
+    spiceData: {},
+    spiceStatus: 'idle',
+    spiceError: null,
 }
 
 export const fetchSlice = createSlice({
@@ -48,9 +49,9 @@ export const fetchSlice = createSlice({
             return {
                 ...state,
                 textData : null,
-                mapData : {},
                 textStatus : 'idle',
-                mapStatus : 'idle',
+                spiceData : {},
+                spiceStatus : 'idle',
                 }
             
         }
@@ -68,16 +69,16 @@ export const fetchSlice = createSlice({
                 state.textStatus = 'failed'
                 state.textError = action.error.message
             })
-            .addCase(fetchMapDatas.pending, (state) => {
-                state.mapStatus = 'loading'
+            .addCase(fetchSpiceDatas.pending, (state) => {
+                state.spiceStatus = 'loading'
             })
-            .addCase(fetchMapDatas.fulfilled, (state, action) => {
-                state.mapStatus = 'successed'
-                state.mapData = action.payload
+            .addCase(fetchSpiceDatas.fulfilled, (state, action) => {
+                state.spiceStatus = 'successed'
+                state.spiceData = action.payload
             })
-            .addCase(fetchMapDatas.rejected, (state, action) => {
-                state.mapStatus = 'failed'
-                state.mapError = action.error.message
+            .addCase(fetchSpiceDatas.rejected, (state, action) => {
+                state.spiceStatus = 'failed'
+                state.spiceError = action.error.message
             })
     }
 })

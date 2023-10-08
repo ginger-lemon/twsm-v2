@@ -8,7 +8,7 @@ import suggestedList from '../../api/keywords/suggestedList.json'
 import searchableList from '../../api/keywords/searchableList.json'
 
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchMapDatas, fetchTextDatas } from '../../redux/fetch/fetchSlice'
+import { fetchSpiceDatas, fetchTextDatas } from '../../redux/fetch/fetchSlice'
 import { useNavigate } from "react-router-dom";
 import { setInputValue, setSelectedValue } from "../../redux/search/searchSlice";
 
@@ -24,7 +24,7 @@ const Home = () => {
     const startSearch = (e) => {
         e.preventDefault()
         dispatch(fetchTextDatas(inputValue))
-        dispatch(fetchMapDatas(inputValue))
+        dispatch(fetchSpiceDatas(inputValue))
 
         if (textStatus === 'successed') {
             navigate('/results')
@@ -40,10 +40,9 @@ const Home = () => {
     const startSearchByClickButton =  (e) => {
         const value = e.target.textContent
         dispatch(setInputValue(value))
-        dispatch(setSelectedValue(value))
 
         dispatch(fetchTextDatas(value))
-        dispatch(fetchMapDatas(value))
+        dispatch(fetchSpiceDatas(value))
 
         navigate('/results')
     }

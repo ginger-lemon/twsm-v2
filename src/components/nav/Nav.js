@@ -9,7 +9,7 @@ import Bookmark from "../../pages/Bookmark/Bookmark";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { resetValue } from "../../redux/search/searchSlice";
+import { resetValue, setInputValue } from "../../redux/search/searchSlice";
 import { resetDatas } from "../../redux/fetch/fetchSlice";
 
 const Nav = () => {
@@ -17,7 +17,7 @@ const Nav = () => {
     const navigate = useNavigate()
 
     const backToHome = () => {
-        dispatch(resetValue())
+        dispatch(setInputValue(''))
         dispatch(resetDatas())
         navigate('/')
     }

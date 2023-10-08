@@ -16,10 +16,9 @@ const App = () => {
                 <Route path="/history" element={<History />} />
                 <Route path="/bookmark" element={<Bookmark />} />
                 <Route path="/results" element={<Results />} />
-                <Route path="flavor" element={<Flavor />} />
-                <Route path="utilization" element={<Utilization />} />
                 {/* 之後改巢狀路由 */}
-                
+                <Route path="/flavor" element={<Flavor />} />
+                <Route path="/utilization" element={<Utilization />} />
                 <Route path="*" element={<h1>連線失敗，請回到首頁重新執行動作。</h1>}/>
             </Routes>
         </BrowserRouter>

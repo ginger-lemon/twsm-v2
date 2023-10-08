@@ -1,7 +1,9 @@
 {
-  "total_results": 813,
-  "page": 1,
-  "per_page": 20,
+  "name": "大葉楠",
+  "tags": ["原生", "台灣特有"],
+  "imgURL" : "https://live.staticflickr.com/8411/8706490644_e748666d7b_b.jpg",
+  "flavor": "種子帶有陳皮、柑桔與仙楂的氣味。",
+  "utilization": "台東的排灣族、魯凱族及卑南族人將曬乾的果實研磨成粉加入湯品中調味。",
   "results": [
     {
       "chName": "大葉楠",

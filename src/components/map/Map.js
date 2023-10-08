@@ -15,8 +15,8 @@ const Map = () => {
     const [showFailedDialog, setShowFailedDialog] = useState(true)
 
     const inputValue = useSelector(state => state.search.inputValue)
-    const mapData = useSelector(state => state.fetch.mapData)
-    const mapStatus = useSelector(state => state.fetch.mapStatus)
+    const mapData = useSelector(state => state.fetch.spiceData)
+    const mapStatus = useSelector(state => state.fetch.spiceStatus)
 
     const customIcon = L.icon({
         iconUrl: MapIcon,
@@ -24,7 +24,7 @@ const Map = () => {
     });
 
     const popups = 
-        mapStatus === 'successed' && mapData.map((data, id) => (
+        mapStatus === 'successed' && mapData.results.map((data, id) => (
             <Marker
                 key={id}
                 icon={customIcon}

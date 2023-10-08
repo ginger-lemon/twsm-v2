@@ -1,7 +1,9 @@
 {
-    "total_results": 27,
-    "page": 1,
-    "per_page": 20,
+    "name": "焊菜",
+    "tags": ["原生"],
+    "imgURL" : "https://www.hdares.gov.tw/upload/hdares/images/web_structure/9571/001.jpg",
+    "flavor": "葉子具有近山葵的嗆辣感，加熱後會消失。",
+    "utilization": "經常作為野菜食用，因其葉子的嗆辣感加熱後會消失，原住民常見的食用方式為沾醬油升吃，適合作為生菜沙拉或調味的香料。",
     "results": [
       {
         "chName": "焊菜",

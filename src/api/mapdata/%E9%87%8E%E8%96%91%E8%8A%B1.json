@@ -1,7 +1,9 @@
 {
-    "total_results": 31,
-    "page": 1,
-    "per_page": 20,
+  "name": "野薑花",
+  "tags": ["外來歸化"],
+  "imgURL" : "https://www.daanforestpark.org.tw/uploads/Commentary/p037/1.jpg",
+  "flavor": "全株均具有香氣。",
+  "utilization": "花瓣與嫩芽可作為野菜涼拌或清炒入菜增添風味，葉子可作為食物容器，如野薑花粽等；莖可代替薑去腥調味，客家部落也會將乾燥後的根部磨成粉末食用",
     "results": [
       {
         "chName": "穗花山奈",

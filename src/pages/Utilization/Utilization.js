@@ -3,8 +3,10 @@ import Styles from './Utilization.module.css'
 import MainLayout from "../../layout/mainLayout/MainLayout";
 import Panel from "../../components/Panel/Panel";
 import ResultsTabs from "../../components/ResultsSection/ResultsTabs";
+import { useSelector } from "react-redux";
 
 const Utilization = () => {
+    const data = useSelector(state => state.fetch.spiceData)
 
     return (
         <MainLayout>
@@ -14,6 +16,7 @@ const Utilization = () => {
                         activeTab='utilization'
                     >
                         <h4>應用</h4>
+                        <p>{data.utilization}</p>
 
                     </ResultsTabs>
                 </div>   

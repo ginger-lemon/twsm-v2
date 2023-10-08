@@ -1,7 +1,9 @@
 {
-    "total_results": 61,
-    "page": 1,
-    "per_page": 20,
+    "name": "水芹菜",
+    "tags": ["原生"],
+    "imgURL" : "https://inaturalist-open-data.s3.amazonaws.com/photos/4275109/large.jpg",
+    "flavor": "永有濃厚的香菜與芹菜香氣。",
+    "utilization": "嫩莖、葉與葉柄常作為野菜食用，葉片可當調味品加入料理中使用。",
     "results": [
       {
         "chName": "水芹菜",
