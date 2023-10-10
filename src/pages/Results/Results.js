@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Styles from './Results.module.css'
 import MainLayout from "../../layout/mainLayout/MainLayout";
 import Panel from "../../components/Panel/Panel";
@@ -10,17 +10,46 @@ import LoadingIcon from '../../images/icon-loading.svg'
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { resetValue, setInputValue } from "../../redux/search/searchSlice";
+import { setHistorySearchedValue, setInputValue } from "../../redux/search/searchSlice";
 import { resetDatas } from "../../redux/fetch/fetchSlice";
 
 const Results = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    const [searchedValue, setSearchedValue] = useState([])
+
     const textData = useSelector(state => state.fetch.textData)
     const textStatus = useSelector(state => state.fetch.textStatus)
     const spiceData = useSelector(state => state.fetch.spiceData)
+    const spiceStatus = useSelector(state => state.fetch.spiceStatus)
+    const inputValue = useSelector(state => state.search.inputValue)
 
+    const tagsData = spiceStatus === 'successed' && spiceData.tags 
+
+    // localStorage 儲存搜尋成功的結果
+    useEffect(() => {
+        const storagedValue = JSON.parse(localStorage.getItem("history"))
+        if (storagedValue) {
+            setSearchedValue(storagedValue)
+        }
+    }, [])
+
+    useEffect(() => {
+        if (textData && inputValue) {
+            const historyValue = [...searchedValue, {
+                name: inputValue,
+                scientificName: textData.SciName,
+                imgURL: spiceData.imgURL
+            }]
+            localStorage.setItem("history", JSON.stringify(historyValue))
+        }
+    }, [textData, inputValue])
+
+    // 如果當 inputValue 為空字串時不顯示 results/flavor/utilization
+
+
+    // 不同狀態的 layout
     const loadingLayout = (
         <>
             <div className={Styles.img}>
@@ -65,6 +94,11 @@ const Results = () => {
                             <h1 className={Styles.h1}>
                                 {textData && textData.ChineseName}
                             </h1>
+                            <tags className={Styles.tagsWrapper}>
+                                {tagsData && tagsData.map((data, i) => (
+                                    <div key={i} className={Styles.tag}>{data}</div>
+                                ))}
+                            </tags>
                         </div>
                         <p className={Styles.scientifiName}>
                             {textData && textData.SciName}
@@ -117,7 +151,7 @@ const Results = () => {
         default:
             renderedLayout = loadingLayout
     }
-
+    
     return (
         <MainLayout>
            <Panel>

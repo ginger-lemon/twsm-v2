@@ -38,11 +38,11 @@
 } */
 
 /* 有 tags 時使用 */
-/* .basicInfo > div {
+.basicInfo > div {
     display: flex;
     flex-direction: row;
     gap: 20px;
-} */
+}
 
 .basicInfo > :nth-child(2) {
     margin-bottom: 10px;
@@ -55,14 +55,24 @@
     color: var(--dark-moss-green);
 }
 
-/* .tags {
-    border: 1px solid red;
+.tagsWrapper {
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: row;
     gap: 10px;
     justify-content: center;
     align-items: center;
-} */
+}
+
+.tag {
+    padding: 10px 20px;
+    background-color: var(--asparagus);
+    border-radius: 20px;
+    color: var(--white);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-p);
+}
+
 
 .scientifiName {
     color: var(--asparagus);

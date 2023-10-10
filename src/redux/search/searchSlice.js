@@ -14,13 +14,13 @@ export const searchSlice = createSlice({
                 ...state,
                 inputValue: action.payload
             }
-        }
+        },
     }
 })
 
 export const { 
     setInputValue,
-    resetValue,
+    setHistorySearchedValue,
 } = searchSlice.actions;
 
 export default searchSlice.reducer;
