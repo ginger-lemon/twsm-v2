@@ -1,7 +1,89 @@
-.wrapper {
+.container {
     border-top: 1px solid var(--light-gray);
     position: absolute;
     top: 100px;
     width: 100%;
 }
 
+/* Bookmark */
+.section {
+    /* border: 1px solid red; */
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid var(--light-gray);
+    margin-bottom: 25px;
+}
+
+
+.card {
+    /* border: 1px solid blue; */
+    border-radius: 10px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px 
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: var(--light-gray);
+}
+
+.imgWrapper {
+    /* border: 1px solid orange; */
+    border-radius: 10px;
+    width: 70px;
+    height: 70px;
+}
+
+.img {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.textWrapper {
+    /* border: 1px solid darkblue; */
+    width: 68%;
+}
+
+.textWrapper > p {
+    margin-top: 5px;
+    line-height: 1.2em;
+}
+
+.comment {
+    /* border: 1px solid green; */
+    padding: 10px 20px 20px 20px;
+}
+
+.comment > p {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    color: var(--dark-moss-green);
+}
+
+.comment > p:hover {
+    color: var(--pumpkin);
+    cursor: pointer;
+}
+ 
+/* localStorage 無資料 */
+.nothing {
+    /* border: 1px solid red; */
+    width: inherit;
+    height: 100px;
+    text-align: center;
+}
+
+.nothing > h4 {
+    margin: 0;
+    transform: translateY(200%);
+    color: var(--dark-moss-green);
+    font-size: var();
+}

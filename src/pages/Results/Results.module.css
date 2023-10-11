@@ -32,12 +32,38 @@
     cursor: pointer;
 }
 
-/* 基本資訊與其他資訊 */
-/* .basicInfo {
-    padding: 0 20px;
-} */
+/* 我的最愛 */
+.bookmarkWrapper {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    background-color: var(--light-gray);
+    border-radius: 45px;
+    width: 45px;
+    height: 45px;
 
-/* 有 tags 時使用 */
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+.bookmarkWrapper > button {
+    border: none;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.bookmark {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+
+
+}
+
+/* 基本資訊與其他資訊 */
 .basicInfo > div {
     display: flex;
     flex-direction: row;

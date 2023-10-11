@@ -7,17 +7,17 @@ import InfoCard from "../../components/InfoCard/InfoCard";
 
 import NoImageIcon from '../../images/icon-noImage.svg'
 import LoadingIcon from '../../images/icon-loading.svg'
+import BookmarkIcon from '../../images/icon-star.svg'
+import SavedBookmarkIcon from '../../images/icon-star-saved.svg'
 
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { setHistorySearchedValue, setInputValue } from "../../redux/search/searchSlice";
+import { setInputValue } from "../../redux/search/searchSlice";
 import { resetDatas } from "../../redux/fetch/fetchSlice";
 
 const Results = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
-    const [searchedValue, setSearchedValue] = useState([])
 
     const textData = useSelector(state => state.fetch.textData)
     const textStatus = useSelector(state => state.fetch.textStatus)
@@ -25,7 +25,22 @@ const Results = () => {
     const spiceStatus = useSelector(state => state.fetch.spiceStatus)
     const inputValue = useSelector(state => state.search.inputValue)
 
+    const [searchedValue, setSearchedValue] = useState([])
+    const [isBookmarked, setIsBookmarked] = useState(
+        () => {
+            const data = JSON.parse(localStorage.getItem("bookmark")) // null?
+            const checkData = data && data.find(data => data.name === inputValue)
+            if (data === null || data.length === 0 || checkData === undefined) {
+                return false
+            } else  {
+                return true
+            }
+        }
+    )
+
     const tagsData = spiceStatus === 'successed' && spiceData.tags 
+
+    // 滑動圖片時出現我的最愛星星
 
     // localStorage 儲存搜尋成功的結果
     useEffect(() => {
@@ -46,8 +61,39 @@ const Results = () => {
         }
     }, [textData, inputValue])
 
-    // 如果當 inputValue 為空字串時不顯示 results/flavor/utilization
+    // TODO: 如果當 inputValue 為空字串時不顯示 results/flavor/utilization
 
+    const handleClickBookmark = () => {
+        const bookmarks = JSON.parse(localStorage.getItem("bookmark"))   
+
+        let addedBookmark
+        if (textStatus === 'successed' && spiceStatus === 'successed') {
+            addedBookmark = {
+                name: inputValue,
+                scientifiName: textData.SciName,
+                imgURL: spiceData && spiceData.imgURL,
+                taxon: [textData.Class, textData.Order, textData.Family],
+                comments: '',
+            }
+        }
+        
+        const checkData = bookmarks && bookmarks.find(data => data.name === inputValue) // undefined = 沒有重複
+
+        if (bookmarks === null || bookmarks.length === 0 || checkData === null) {
+            localStorage.setItem("bookmark", JSON.stringify([addedBookmark]))
+            setIsBookmarked(true)
+
+        } else if (checkData === undefined) {
+            localStorage.setItem("bookmark", JSON.stringify([...bookmarks, addedBookmark]))
+            setIsBookmarked(true)
+
+        } else if (checkData !== undefined) {
+            const removeBookmark = bookmarks.filter(data => data.name !== inputValue)
+            localStorage.setItem("bookmark", JSON.stringify(removeBookmark))
+            setIsBookmarked(false)
+        }
+
+    }
 
     // 不同狀態的 layout
     const loadingLayout = (
@@ -87,6 +133,17 @@ const Results = () => {
                         src={spiceData.imgURL}
                         alt=""
                     />
+                    {/* hover 時才顯示 star */}
+                    <div className={Styles.bookmarkWrapper}>
+                        <button 
+                            onClick={(e) => handleClickBookmark(textData, spiceData)}
+                        >
+                            <img 
+                                src={isBookmarked ? SavedBookmarkIcon : BookmarkIcon}
+                                className={Styles.bookmark}
+                            />
+                        </button>
+                    </div>
                 </div>
                 <InfoCard>
                     <div className={Styles.basicInfo}>

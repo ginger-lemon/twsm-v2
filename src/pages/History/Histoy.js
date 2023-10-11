@@ -20,7 +20,9 @@ const History = () => {
     )
     const [theLatestHistory, setTheLatestHistory] = useState(
         () => {
-           historyValue === null || historyValue.length === 0 && initialLatestHistory
+           if (historyValue === null || historyValue.length === 0) {
+                return initialLatestHistory
+           } 
         }
     )
 
@@ -160,7 +162,6 @@ const History = () => {
                                     刪除
                                 </button>
                             </div>
-                            <div className={Styles.clearf}></div>
                         </div>
                         {theLatestHistory}
                     </InfoCard>
