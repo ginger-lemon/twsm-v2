@@ -20,7 +20,6 @@ export const searchSlice = createSlice({
 
 export const { 
     setInputValue,
-    setHistorySearchedValue,
 } = searchSlice.actions;
 
 export default searchSlice.reducer;

@@ -3,8 +3,11 @@ import Styles from './History.module.css'
 import MainLayout from "../../layout/mainLayout/MainLayout";
 import Panel from "../../components/Panel/Panel";
 import InfoCard from "../../components/InfoCard/InfoCard";
+import { useDispatch } from "react-redux";
+import { setInputValue } from "../../redux/search/searchSlice";
 
 const History = () => {
+    const dispatch = useDispatch()
     // get data from localSotrage
     const historyValue = JSON.parse(localStorage.getItem("history"))
 
@@ -99,6 +102,7 @@ const History = () => {
     useEffect(() => {
         if (historyValue === null || historyValue.length === 0) {
             setTheLatestHistory(initialLatestHistory)
+            dispatch(setInputValue(''))
             return
         } else if (historyValue) {
             console.log(selectedIndex)
