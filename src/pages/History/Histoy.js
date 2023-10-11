@@ -7,12 +7,11 @@ import InfoCard from "../../components/InfoCard/InfoCard";
 const History = () => {
     // get data from localSotrage
     const historyValue = JSON.parse(localStorage.getItem("history"))
-    // console.log(historyValue)
 
     const initialLatestHistory = (
         <div className={Styles.nothing}>
             <h4>
-                還未有搜尋紀錄哦！
+                目前沒有搜尋紀錄哦！
             </h4>
         </div>
     )
@@ -34,7 +33,11 @@ const History = () => {
                         onClick={() => console.log('按我自動搜尋')}
                     > 
                         <div className={Styles.imgWrapper}>
-                            <img src={data.imgURL} className={Styles.img} alt={data.name}/>
+                            <img 
+                                src={data.imgURL} 
+                                className={Styles.img} 
+                                alt={data.name}
+                            />
                         </div>
                         <div className={Styles.textsWrapper}>
                             <h3>{data.name}</h3>
@@ -46,6 +49,7 @@ const History = () => {
                         className={Styles.checkbox} 
                         id={historyList.length - index - 1} 
                         onClick={(e) => handleSelectedHistory(e, index)}
+                        checked={selectedIndex.includes(historyList.length - index - 1) ? true : false}
                     >
                     </input>
                 </div>
@@ -75,8 +79,11 @@ const History = () => {
                     <input 
                         type="checkbox" 
                         className={Styles.checkbox} 
-                        id={historyList.length - index - 1} 
-                        onClick={(e) => handleSelectedHistory(e, index)}></input>
+                        id={historyList.length - index - 1}
+                        onClick={(e) => handleSelectedHistory(e, index)}
+                        checked={selectedIndex.includes(historyList.length - index - 1) ? true : false}
+                    >
+                    </input>
                 </div>
             ))
             setTheLatestHistory(moreThan5Layout)
@@ -88,51 +95,51 @@ const History = () => {
         } 
     }
 
+    // 根據 selectedIndex 變化 re-render theLastestHistory
     useEffect(() => {
         if (historyValue === null || historyValue.length === 0) {
             setTheLatestHistory(initialLatestHistory)
             return
         } else if (historyValue) {
+            console.log(selectedIndex)
             renderHistoryList(historyValue)
             return
         }
     }, [selectedIndex])
     
     const handleSelectedHistory = (e, index) => {
-        const isCheck = e.target.checked
-        if (isCheck !== false) {
-            setSelectedIndex([...selectedIndex, index])
+        const isChecked = e.target.checked
+        const clickedIndex = historyValue.length - index - 1
+
+        if (isChecked !== false) {
+            setSelectedIndex((prevSelectedIndex) => [...prevSelectedIndex, clickedIndex])
+        } else if (isChecked === false) {
+            setSelectedIndex(
+                [...selectedIndex].filter(
+                    // selectedIndex 不包含現在選到的 index 
+                    item => item !== clickedIndex
+                )
+            )
         }
     }
 
-    // TODO: 刪除按鈕事件處理函數
-    // 加入 selectedIndex 
     const handleDeleteSelectedHistory = () => {
-        let undeletedHistory;
-        const renderUndeletedList = () => {
-            localStorage.setItem("history", JSON.stringify(undeletedHistory))
-            const newList = JSON.parse(localStorage.getItem("history"))
-            selectedIndex && renderHistoryList(newList)
-        }
+        let undeletedHistory = historyValue.filter(
+            // historyValue 內沒有儲存 index ，
+            // 透過 selectedIndex.includes() 代入 index 去找相同的，再排除
+            (data, index) => !selectedIndex.includes(index)
+        )
+        console.log(undeletedHistory)
 
-        if (historyValue.length - selectedIndex.length == 0) {
-            undeletedHistory = historyValue.filter(
-                (data, index) => !selectedIndex.includes( index) 
-            )
+        // 篩選後的新陣列儲存到 localStorage
+        localStorage.setItem("history", JSON.stringify(undeletedHistory))
 
-            undeletedHistory.length === 0 && localStorage.setItem("history", JSON.stringify([]))
+        // reset selectedIndex 
+        setSelectedIndex([])
 
-            setTheLatestHistory(initialLatestHistory)
-            return
-
-        } else if (historyValue.length - selectedIndex.length != 0) {
-            undeletedHistory = historyValue.filter(
-                (data, index) => !selectedIndex.includes(historyValue.length - index - 1) 
-            )
-
-            renderUndeletedList(undeletedHistory)
-            return
-        } 
+        setTheLatestHistory(
+           () => renderHistoryList(undeletedHistory) 
+        )
     }
 
     return (
