@@ -4,7 +4,7 @@
 
 ## 專案環境說明
 
-執行應用程式前，請確保下方工具：
+執行應用程式前，請確保下方工具版本：
 
 - node.js: v18.16.0
 - npm: v9.5.1
@@ -15,7 +15,7 @@ clone 本專案後，可執行以下 script 執行專案：
 
 - `npm install` 安裝應用程式所有依賴
 - `npm start` 在開發模式中執行本應用程式
-- `npm run build` 在生產模式 bundle 本應用程式
+- `npm run build` 在生產模式 build 本應用程式
 
 ## 技術
 
