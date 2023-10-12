@@ -8,12 +8,7 @@ import BookmarkItem from "./BookmarkItem";
 const Bookmark = () => {
     const bookmarkValue = JSON.parse(localStorage.getItem("bookmark"))
     const reversedBookmarkValue = bookmarkValue && [...bookmarkValue].reverse()
-
-    // 當有子元件新增備註時重新 getItem
-    useEffect(() => {
-        
-    }, [])
-
+    
     // rendered layout
     const initialLatestBookmark = (
         <div className={Styles.nothing}>

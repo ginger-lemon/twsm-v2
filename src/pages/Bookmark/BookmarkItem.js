@@ -29,18 +29,15 @@ const BookmarkItem = ({
 
     const handleSubmitComments = (e) => {
         e.preventDefault()
-        const formIndex = e.currentTarget.form.dataset.index
-        // console.log(formIndex)
 
+        const formIndex = e.currentTarget.form.dataset.index
         const [ findData ] = bookmarkValue && bookmarkValue.filter(
             (data, index) => index === bookmarkValue.length - formIndex - 1 
         )
-        console.log(findData)
         const addComments = findData && {
             ...findData,
             comments: commentText,
         }
-        // console.log(addComments)
         const updatingData = bookmarkValue.map(
             (data, index ) => {
                 if (index === bookmarkValue.length - formIndex - 1) {
@@ -49,11 +46,8 @@ const BookmarkItem = ({
                 return data
             }
         )
-
-        // console.log(updatingData)
         localStorage.setItem("bookmark", JSON.stringify(updatingData))
         setIsEdit(false)
-        // 需要重新 render 元件
     }
 
     // TODO: 點選學名部分可以連結到搜尋結果頁面
@@ -83,7 +77,7 @@ const BookmarkItem = ({
                 {!isEdit &&  
                     (
                         <div className={Styles.commentsText}>
-                            <p>{comments}</p>
+                            <p>{commentText}</p>
                         </div>
                     )
                 }
