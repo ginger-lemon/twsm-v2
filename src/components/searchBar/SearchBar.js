@@ -42,7 +42,7 @@ const SearchBar = ({ handleSubmit, handleKeydown }) => {
                 <div className={Styles.form}>
                     <input
                         className={Styles.input}
-                        placeholder="請選擇下方的香料名稱"
+                        placeholder="請選擇下方的香料"
                         value={inputValue}
                         // onChange={handleChange}
                         onKeyDown={handleKeydown}

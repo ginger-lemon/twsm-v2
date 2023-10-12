@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Styles from './BookmarkItem.module.css'
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const BookmarkItem = ({ 
         index, 
@@ -17,6 +19,8 @@ const BookmarkItem = ({
                 bookmarkValue[bookmarkValue.length - index - 1].comments : null
         }
     )
+
+    const navigate = useNavigate()
 
     const handleEditComments = (e) => {
         setCommentText(e.target.value)
@@ -53,6 +57,7 @@ const BookmarkItem = ({
     // TODO: 點選學名部分可以連結到搜尋結果頁面
     const handleToggleToResults = () => {
         console.log('切到結果頁')
+        navigate(`/results/${name}`)
     }
 
     return (

@@ -5,11 +5,14 @@ import Panel from "../../components/Panel/Panel";
 import InfoCard from "../../components/InfoCard/InfoCard";
 import { useDispatch } from "react-redux";
 import { setInputValue } from "../../redux/search/searchSlice";
+import { useNavigate } from "react-router-dom";
 
 const History = () => {
     const dispatch = useDispatch()
     // get data from localSotrage
     const historyValue = JSON.parse(localStorage.getItem("history"))
+
+    const navigate = useNavigate()
 
     const initialLatestHistory = (
         <div className={Styles.nothing}>
@@ -35,7 +38,7 @@ const History = () => {
                 <div key={historyList.length - index - 1} className={Styles.section}>
                     <div 
                         className={Styles.listWrapper} 
-                        onClick={() => console.log('按我自動搜尋')}
+                        onClick={() => handleToggleToResults(data.name)}
                     > 
                         <div className={Styles.imgWrapper}>
                             <img 
@@ -71,7 +74,7 @@ const History = () => {
                 >
                     <div 
                         className={Styles.listWrapper} 
-                        onClick={() => console.log('按我自動搜尋')}
+                        onClick={() => handleToggleToResults(data.name)}
                     >
                         <div className={Styles.imgWrapper}>
                             <img src={data.imgURL} className={Styles.img} alt={data.name}/>
@@ -111,7 +114,11 @@ const History = () => {
             renderHistoryList(historyValue)
             return
         }
-    }, [selectedIndex])
+    }, [selectedIndex, theLatestHistory])
+
+    const handleToggleToResults = (name) => {
+        navigate(`/results/${name}`)
+    }
     
     const handleSelectedHistory = (e, index) => {
         const isChecked = e.target.checked
@@ -135,17 +142,14 @@ const History = () => {
             // 透過 selectedIndex.includes() 代入 index 去找相同的，再排除
             (data, index) => !selectedIndex.includes(index)
         )
-        console.log(undeletedHistory)
-
         // 篩選後的新陣列儲存到 localStorage
         localStorage.setItem("history", JSON.stringify(undeletedHistory))
 
-        // reset selectedIndex 
         setSelectedIndex([])
-
         setTheLatestHistory(
            () => renderHistoryList(undeletedHistory) 
         )
+
     }
 
     return (
@@ -154,14 +158,16 @@ const History = () => {
                 <div className={Styles.container}>
                     <InfoCard>
                         <div className={Styles.toolBar}>
-                            <div className={Styles.buttonWrapper}>
-                                <button
-                                    className={Styles.button}
-                                    onClick={handleDeleteSelectedHistory}
-                                >
-                                    刪除
-                                </button>
-                            </div>
+                            { historyValue ? (
+                                <div className={Styles.buttonWrapper}>
+                                    <button
+                                        className={Styles.button}
+                                        onClick={handleDeleteSelectedHistory}
+                                    >
+                                        刪除
+                                    </button>
+                                </div>
+                            ) : null }
                         </div>
                         {theLatestHistory}
                     </InfoCard>

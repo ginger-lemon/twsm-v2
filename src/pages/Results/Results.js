@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Styles from './Results.module.css'
 import MainLayout from "../../layout/mainLayout/MainLayout";
 import Panel from "../../components/Panel/Panel";
-import ResultsTabs from "../../components/ResultsSection/ResultsTabs";
+import ResultsTabs from "../../components/ResultsTabs/ResultsTabs";
 import InfoCard from "../../components/InfoCard/InfoCard";
 
 import NoImageIcon from '../../images/icon-noImage.svg'
@@ -11,13 +11,22 @@ import BookmarkIcon from '../../images/icon-star.svg'
 import SavedBookmarkIcon from '../../images/icon-star-saved.svg'
 
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { setInputValue } from "../../redux/search/searchSlice";
-import { resetDatas } from "../../redux/fetch/fetchSlice";
+import { fetchSpiceDatas, fetchTextDatas, resetDatas } from "../../redux/fetch/fetchSlice";
 
 const Results = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    const { id } = useParams()
+    
+    // 避免重新整理時資料消失
+    useEffect(() => {
+        dispatch(setInputValue(id))
+        dispatch(fetchTextDatas(id))
+        dispatch(fetchSpiceDatas(id))
+    }, [id])
 
     const textData = useSelector(state => state.fetch.textData)
     const textStatus = useSelector(state => state.fetch.textStatus)
@@ -40,8 +49,6 @@ const Results = () => {
 
     const tagsData = spiceStatus === 'successed' && spiceData.tags 
 
-    // 滑動圖片時出現我的最愛星星
-
     // localStorage 儲存搜尋成功的結果
     useEffect(() => {
         const storagedValue = JSON.parse(localStorage.getItem("history"))
@@ -61,18 +68,16 @@ const Results = () => {
         }
     }, [textData, inputValue])
 
-    // TODO: 如果當 inputValue 為空字串時不顯示 results/flavor/utilization
-
     const handleClickBookmark = () => {
         const bookmarks = JSON.parse(localStorage.getItem("bookmark"))   
 
         let addedBookmark
         if (textStatus === 'successed' && spiceStatus === 'successed') {
             addedBookmark = {
-                name: inputValue,
-                scientifiName: textData.SciName,
+                name: inputValue === textData.name ? inputValue : inputValue,
+                scientifiName: textData && textData.SciName,
                 imgURL: spiceData && spiceData.imgURL,
-                taxon: [textData.Class, textData.Order, textData.Family],
+                taxon: textData && [textData.Class, textData.Order, textData.Family],
                 comments: '',
             }
         }
@@ -128,12 +133,10 @@ const Results = () => {
     const successedLayout = (
         <>
             <div className={Styles.img}>
-                    {/* 使用 mock data */}
                     <img 
                         src={spiceData.imgURL}
                         alt=""
                     />
-                    {/* hover 時才顯示 star */}
                     <div className={Styles.bookmarkWrapper}>
                         <button 
                             onClick={(e) => handleClickBookmark(textData, spiceData)}
@@ -183,7 +186,7 @@ const Results = () => {
         </div>
     )
 
-    // TODO: 根據 status render 對應版面
+    // 根據 status render 對應版面
     let renderedLayout;
 
     switch (textStatus) {

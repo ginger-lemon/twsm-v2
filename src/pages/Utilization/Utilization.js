@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Styles from './Utilization.module.css'
 import MainLayout from "../../layout/mainLayout/MainLayout";
 import Panel from "../../components/Panel/Panel";
-import ResultsTabs from "../../components/ResultsSection/ResultsTabs";
-import { useSelector } from "react-redux";
+import ResultsTabs from "../../components/ResultsTabs/ResultsTabs";
+import { useDispatch, useSelector } from "react-redux";
+import { setInputValue } from "../../redux/search/searchSlice";
+import { fetchSpiceDatas, fetchTextDatas } from "../../redux/fetch/fetchSlice";
 
 const Utilization = () => {
+    const dispatch = useDispatch()
+
+    const { id } = useParams()
+    
+    // 避免重新整理時資料消失
+    useEffect(() => {
+        dispatch(setInputValue(id))
+        dispatch(fetchTextDatas(id))
+        dispatch(fetchSpiceDatas(id))
+    }, [id])
+
     const data = useSelector(state => state.fetch.spiceData)
 
     return (

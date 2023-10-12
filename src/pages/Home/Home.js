@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Styles from './Home.module.css'
 import MainLayout from "../../layout/mainLayout/MainLayout";
 import SearchBar from "../../components/searchBar/SearchBar";
@@ -10,7 +10,7 @@ import searchableList from '../../api/keywords/searchableList.json'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchSpiceDatas, fetchTextDatas } from '../../redux/fetch/fetchSlice'
 import { useNavigate } from "react-router-dom";
-import { setInputValue, setSelectedValue } from "../../redux/search/searchSlice";
+import { setInputValue } from "../../redux/search/searchSlice";
 
 const Home = () => {
     const dispatch = useDispatch()
@@ -44,7 +44,7 @@ const Home = () => {
         dispatch(fetchTextDatas(value))
         dispatch(fetchSpiceDatas(value))
 
-        navigate('/results')
+        navigate(`/results/${value}`)
     }
 
     return (
