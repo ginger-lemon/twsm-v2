@@ -27,7 +27,6 @@ const BookmarkItem = ({
     }
 
     const handleToggleToEdit = () => {
-        console.log('切換到編輯模式')
         setIsEdit(true)
     } 
 
@@ -54,9 +53,7 @@ const BookmarkItem = ({
         setIsEdit(false)
     }
 
-    // TODO: 點選學名部分可以連結到搜尋結果頁面
     const handleToggleToResults = () => {
-        console.log('切到結果頁')
         navigate(`/results/${name}`)
     }
 

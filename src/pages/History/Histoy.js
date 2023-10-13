@@ -110,7 +110,6 @@ const History = () => {
             dispatch(setInputValue(''))
             return
         } else if (historyValue) {
-            console.log(selectedIndex)
             renderHistoryList(historyValue)
             return
         }

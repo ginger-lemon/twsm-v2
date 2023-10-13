@@ -18,13 +18,6 @@ const SearchBar = ({ handleSubmit, handleKeydown }) => {
     const isInitialInputValue = inputValue === '' // true | false
     const submitIcon = isInitialInputValue ? SearchIcon: CloseIcon
 
-    // for fetching data so block
-    // const handleChange = (e) => {
-    //     const value = e.target.value 
-    //     console.log(value)
-    //     dispatch(setInputValue(value))
-    // }
-
     const backToHome = (e) => {
         e.preventDefault()
         dispatch(setInputValue(''))

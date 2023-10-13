@@ -7,8 +7,6 @@ import LoadingIcon from '../../images/icon-loading.svg'
 
 import { useDispatch, useSelector } from "react-redux";
 
-// TODO: re-render 
-
 const Map = () => {
     // get map ref
     const [map, setMap] = useState(null)
@@ -50,7 +48,6 @@ const Map = () => {
     // close failedDialog
     const handleShowFailedDialog = () => {
         setShowFailedDialog(false)
-        console.log('click')
     }
 
     const failedDialog = (
