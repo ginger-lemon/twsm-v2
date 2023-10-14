@@ -1,11 +1,13 @@
 {
   "name": "twsm",
+  "homepage": "https://ginger-lemon.github.io/twsm-v2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "gh-pages -d public"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,7 @@
     "dotenv": "^16.3.1",
     "dotenv-webpack": "^8.0.1",
     "elint": "^2.0.1",
+    "gh-pages": "^6.0.0",
     "html-webpack-plugin": "^5.5.3",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
