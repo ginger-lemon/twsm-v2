@@ -56,13 +56,13 @@ const Home = () => {
                 />
                 <SearchHelperCard
                     title="你有聽過的台灣原生香料"
-                    description="按下下方的任一個香料名稱搜尋看看！"
+                    description="點選下方的任一個香料名稱搜尋看看！"
                     datas={suggestedList}
                     handleClick={startSearchByClickButton}
                 />
                 <SearchHelperCard
                     title="還有哪些香料呢？"
-                    description="按下下方的任一個香料名稱搜尋看看！"
+                    description="點選下方的任一個香料名稱搜尋看看！"
                     datas={searchableList}
                     handleClick={startSearchByClickButton}
                 />
