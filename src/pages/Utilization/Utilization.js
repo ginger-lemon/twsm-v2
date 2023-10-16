@@ -6,6 +6,7 @@ import ResultsTabs from "../../components/ResultsTabs/ResultsTabs";
 import { useDispatch, useSelector } from "react-redux";
 import { setInputValue } from "../../redux/search/searchSlice";
 import { fetchSpiceDatas, fetchTextDatas } from "../../redux/fetch/fetchSlice";
+import { useParams } from "react-router-dom";
 
 const Utilization = () => {
     const dispatch = useDispatch()

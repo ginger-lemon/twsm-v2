@@ -20,7 +20,7 @@
     left: 60%;
     z-index: 999999;
 
-    @media (max-width: 786px) {
+    @media (max-width: 992px) {
       position: absolute;
       top: 70vh;
       left: 37%;
@@ -61,7 +61,7 @@
   left: 65%;
   z-index: 999999;
 
-  @media (max-width: 786px) {
+  @media (max-width: 992px) {
     top: 70%;
     left: 30%;
   }
