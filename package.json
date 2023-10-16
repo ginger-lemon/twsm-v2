@@ -1,6 +1,7 @@
 {
   "name": "twsm",
   "homepage": "https://ginger-lemon.github.io/twsm-v2",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
