@@ -130,7 +130,7 @@ const Results = () => {
         </>
     )
    
-    const successedLayout = (
+    const successedLayout = textData && (
         <>
             <div className={Styles.img}>
                     <img 
@@ -152,7 +152,7 @@ const Results = () => {
                     <div className={Styles.basicInfo}>
                         <div>
                             <h1 className={Styles.h1}>
-                                {textData && textData.ChineseName}
+                                {textData.ChineseName}
                             </h1>
                             <tags className={Styles.tagsWrapper}>
                                 {tagsData && tagsData.map((data, i) => (
@@ -161,10 +161,10 @@ const Results = () => {
                             </tags>
                         </div>
                         <p className={Styles.scientifiName}>
-                            {textData && textData.SciName}
+                            {textData.SciName}
                         </p>
                         <p>
-                            {`${textData && textData.Class} > ${textData && textData.Order} > ${textData && textData.Family}`}
+                            {`${textData.Class} > ${textData.Order} > ${textData.Family}`}
                         </p>
                     </div>
                 </InfoCard>
@@ -172,9 +172,9 @@ const Results = () => {
                     activeTab='results'
                 >
                     <h4>習性</h4>
-                    <p>{textData && textData.Behavior}</p>
+                    <p>{textData.Behavior === null || textData.Behavior === 'NULL' ? `${inputValue}的習性正在如火如荼整理中！敬請期待！` : textData.Behavior}</p>
                     <h4>特徵</h4>
-                    <p>{textData && textData.Characters}</p>
+                    <p>{textData.Characters === null ? `${inputValue}的特徵正如火如荼整理中！敬請期待！` : textData.Characters}</p>
                 </ResultsTabs>
         </>
     )
